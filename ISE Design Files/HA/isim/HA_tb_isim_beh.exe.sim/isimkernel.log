@@ -2,14 +2,14 @@ Command line:
    HA_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51081
+     -socket  49680
 
-Tue Feb 09 15:22:34 2016
+Wed Feb 10 12:17:27 2016
 
 
  Elaboration Time: 0.03125 sec
 
- Current Memory Usage: 361.456 Meg
+ Current Memory Usage: 361.517 Meg
 
  Total Signals          : 8
  Total Nets             : 4
@@ -19,11 +19,11 @@ Tue Feb 09 15:22:34 2016
  Total Processes        : 3
  Total Traceable Variables  : 8
  Total Scalar Nets and Variables : 364
-Total Line Count : 26
+Total Line Count : 11
 
- Total Simulation Time: 0.046875 sec
+ Total Simulation Time: 0.09375 sec
 
- Current Memory Usage: 361.456 Meg
+ Current Memory Usage: 361.517 Meg
 
-Tue Feb 09 15:22:45 2016
+Wed Feb 10 12:17:37 2016
 

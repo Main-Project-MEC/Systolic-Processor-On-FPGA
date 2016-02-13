@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: FA.prj
 
@@ -105,9 +105,11 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd" in Library work.
-Architecture ha_arch of Entity ha is up to date.
+Entity <ha> compiled.
+Entity <ha> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd" in Library work.
-Architecture fa_arch of Entity fa is up to date.
+Entity <fa> compiled.
+Entity <fa> (Architecture <fa_arch>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -135,7 +137,7 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <HA>.
     Related source file is "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd".
-    Found 1-bit xor2 for signal <Sum>.
+    Found 1-bit xor2 for signal <Sout>.
 Unit <HA> synthesized.
 
 
@@ -286,12 +288,12 @@ Delay:               9.033ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.98 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.42 secs
  
 --> 
 
-Total memory usage is 234460 kilobytes
+Total memory usage is 234432 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

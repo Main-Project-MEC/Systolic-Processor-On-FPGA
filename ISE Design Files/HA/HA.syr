@@ -106,18 +106,18 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd" in Library work.
 Entity <ha> compiled.
-Entity <HA> (Architecture <HA_arch>) compiled.
+Entity <ha> (Architecture <ha_arch>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <HA> in library <work> (architecture <HA_arch>).
+Analyzing hierarchy for entity <HA> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <HA> in library <work> (Architecture <HA_arch>).
+Analyzing Entity <HA> in library <work> (Architecture <behavioral>).
 Entity <HA> analyzed. Unit <HA> generated.
 
 
@@ -129,7 +129,7 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <HA>.
     Related source file is "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd".
-    Found 1-bit xor2 for signal <Sum>.
+    Found 1-bit xor2 for signal <Sout>.
 Unit <HA> synthesized.
 
 
@@ -276,11 +276,11 @@ Delay:               9.033ns (Levels of Logic = 3)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.41 secs
+Total CPU time to Xst completion: 5.51 secs
  
 --> 
 
-Total memory usage is 234488 kilobytes
+Total memory usage is 234456 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -32,14 +32,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity HA is
     Port ( A : in  STD_LOGIC;
            B : in  STD_LOGIC;
-           Sum : out  STD_LOGIC;
+           Sout : out  STD_LOGIC;
            Cout : out  STD_LOGIC);
 end HA;
 
 architecture HA_arch of HA is
 
 begin
-Sum<= A XOR B;
+Sout<= A XOR B;
 Cout<= A AND B;
 end HA_arch;
 

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-09T15:07:59</DateModified>
+  <DateModified>2016-02-10T12:16:33</DateModified>
   <ModuleName>HA</ModuleName>
-  <SummaryTimeStamp>2016-02-09T14:59:57</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-02-10T12:16:32</SummaryTimeStamp>
   <SavedFilePath>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/iseconfig/HA.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA\</ImplementationReportsDirectory>
   <DateInitialized>2016-02-09T14:09:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

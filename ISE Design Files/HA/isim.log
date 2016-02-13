@@ -11,36 +11,3 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 30 ns: Note: Success! (/ha_tb/).
-at 60 ns: Note: Success! (/ha_tb/).
-at 90 ns: Note: Success! (/ha_tb/).
-at 120 ns: Note: Success! (/ha_tb/).
-at 150 ns: Note: Success! (/ha_tb/).
-at 180 ns: Note: Success! (/ha_tb/).
-at 210 ns: Note: Success! (/ha_tb/).
-at 240 ns: Note: Success! (/ha_tb/).
-at 270 ns: Note: Success! (/ha_tb/).
-at 300 ns: Note: Success! (/ha_tb/).
-at 330 ns: Note: Success! (/ha_tb/).
-at 360 ns: Note: Success! (/ha_tb/).
-at 390 ns: Note: Success! (/ha_tb/).
-at 420 ns: Note: Success! (/ha_tb/).
-at 450 ns: Note: Success! (/ha_tb/).
-at 480 ns: Note: Success! (/ha_tb/).
-at 510 ns: Note: Success! (/ha_tb/).
-at 540 ns: Note: Success! (/ha_tb/).
-at 570 ns: Note: Success! (/ha_tb/).
-at 600 ns: Note: Success! (/ha_tb/).
-at 630 ns: Note: Success! (/ha_tb/).
-at 660 ns: Note: Success! (/ha_tb/).
-at 690 ns: Note: Success! (/ha_tb/).
-at 720 ns: Note: Success! (/ha_tb/).
-at 750 ns: Note: Success! (/ha_tb/).
-at 780 ns: Note: Success! (/ha_tb/).
-at 810 ns: Note: Success! (/ha_tb/).
-at 840 ns: Note: Success! (/ha_tb/).
-at 870 ns: Note: Success! (/ha_tb/).
-at 900 ns: Note: Success! (/ha_tb/).
-at 930 ns: Note: Success! (/ha_tb/).
-at 960 ns: Note: Success! (/ha_tb/).
-at 990 ns: Note: Success! (/ha_tb/).

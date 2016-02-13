@@ -17,5 +17,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 7 VHDL Units
 Built simulation executable E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA_tb_isim_beh.exe
-Fuse Memory Usage: 27736 KB
-Fuse CPU Usage: 421 ms
+Fuse Memory Usage: 27764 KB
+Fuse CPU Usage: 468 ms

@@ -21,7 +21,7 @@ end FA;
 
 architecture FA_arch of FA is
 component HA
-	port(A,B: in STD_LOGIC;Sum,Cout: out STD_LOGIC);
+	port(A,B: in STD_LOGIC; Sout,Cout: out STD_LOGIC);
 end component;
 
 signal S1,C1,C2: STD_LOGIC;

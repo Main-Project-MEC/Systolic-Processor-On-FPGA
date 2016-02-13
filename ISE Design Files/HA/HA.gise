@@ -54,7 +54,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="HA_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="HA_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="HA_summary.xml"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HA_tb_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HA_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="HA_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="HA_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="HA_usage.xml"/>
@@ -81,7 +81,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455011549" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1455011549">
+    <transform xil_pn:end_ts="1455086838" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1455086838">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.vhd"/>
@@ -99,13 +99,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455011549" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1455011549">
+    <transform xil_pn:end_ts="1455086839" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1455086838">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.vhd"/>
       <outfile xil_pn:name="HA_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1455011552" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6870215033032150923" xil_pn:start_ts="1455011549">
+    <transform xil_pn:end_ts="1455086843" xil_pn:in_ck="-3515795409083368473" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6870215033032150923" xil_pn:start_ts="1455086839">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -117,7 +117,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1455011552" xil_pn:in_ck="1132256764382473517" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1401660039173000744" xil_pn:start_ts="1455011552">
+    <transform xil_pn:end_ts="1455086845" xil_pn:in_ck="1132256764382473517" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1401660039173000744" xil_pn:start_ts="1455086843">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -154,7 +154,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455011192" xil_pn:in_ck="2896618297" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-9065506641718369160" xil_pn:start_ts="1455011183">
+    <transform xil_pn:end_ts="1455086792" xil_pn:in_ck="2896618297" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-9065506641718369160" xil_pn:start_ts="1455086783">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -166,6 +166,7 @@
       <outfile xil_pn:name="HA.stx"/>
       <outfile xil_pn:name="HA.syr"/>
       <outfile xil_pn:name="HA.xst"/>
+      <outfile xil_pn:name="HA_tb_beh.prj"/>
       <outfile xil_pn:name="HA_vhdl.prj"/>
       <outfile xil_pn:name="HA_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -176,7 +177,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455011295" xil_pn:in_ck="2896609551" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3697035973719232074" xil_pn:start_ts="1455011285">
+    <transform xil_pn:end_ts="1455086798" xil_pn:in_ck="2896609551" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3697035973719232074" xil_pn:start_ts="1455086792">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.bld"/>
@@ -185,7 +186,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455011308" xil_pn:in_ck="2896609552" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455011295">
+    <transform xil_pn:end_ts="1455086802" xil_pn:in_ck="2896609552" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455086798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.pcf"/>
@@ -198,7 +199,7 @@
       <outfile xil_pn:name="HA_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455011324" xil_pn:in_ck="3437236889950249" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1455011308">
+    <transform xil_pn:end_ts="1455086809" xil_pn:in_ck="3437236889950249" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1455086802">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.ncd"/>
@@ -212,7 +213,7 @@
       <outfile xil_pn:name="HA_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455011324" xil_pn:in_ck="2896609420" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1455011320">
+    <transform xil_pn:end_ts="1455086809" xil_pn:in_ck="2896609420" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1455086806">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="HA.twr"/>
