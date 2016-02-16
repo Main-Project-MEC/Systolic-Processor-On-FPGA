@@ -2,7 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity PIPO10 is
-    Port ( CLK,Preset,Clear: in STD_LOGIC; Rin: in  STD_LOGIC_VECTOR (9 downto 0);
+    Port ( Rin: in  STD_LOGIC_VECTOR (9 downto 0); 
+			  CLK,Preset,Clear: in STD_LOGIC; 
            Rout : out  STD_LOGIC_VECTOR (9 downto 0));
 end PIPO10;
 

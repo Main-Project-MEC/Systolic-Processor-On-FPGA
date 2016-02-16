@@ -37,7 +37,7 @@ end PIPO10_tb;
  
 architecture behavior of PIPO10_tb is
 	component PIPO10
-   Port ( Rin, CLK, Preset, Clear : in  STD_LOGIC_VECTOR (9 downto 0);
+   port ( Rin, CLK, Preset, Clear : in  STD_LOGIC_VECTOR (9 downto 0);
            Rout : out  STD_LOGIC_VECTOR (9 downto 0));
    end component;
    
@@ -46,6 +46,9 @@ architecture behavior of PIPO10_tb is
    signal Rout: std_logic_vector(9 downto 0);
    constant CLK_period : time := 10 ns;
 	
+	begin
+	mapping: PIPO10 port map(Rin,
+	process
    begin
 		CLK <= '0';
 		wait for CLK_period/2;
@@ -53,18 +56,4 @@ architecture behavior of PIPO10_tb is
 		wait for CLK_period/2;
    end process;
  
-
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for CLK_period*10;
-
-      -- insert stimulus here 
-
-      wait;
-   end process;
-
-END;
+ 
