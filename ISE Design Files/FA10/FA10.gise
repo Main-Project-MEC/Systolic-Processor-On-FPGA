@@ -54,6 +54,10 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="FA10_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FA10_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="FA10_summary.xml"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FA10_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FA10_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="FA10_tb_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FA10_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="FA10_usage.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FA10_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="FA10_xst.xrpt"/>
@@ -63,7 +67,12 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
@@ -73,27 +82,56 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455289130" xil_pn:in_ck="-6597170341157736468" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1455289130">
+    <transform xil_pn:end_ts="1455431755" xil_pn:in_ck="-1563354464352392167" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1455431755">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="../FA/FA.vhd"/>
       <outfile xil_pn:name="../HA/HA.vhd"/>
       <outfile xil_pn:name="FA10.vhd"/>
+      <outfile xil_pn:name="FA10_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1455289130" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9044832904953873877" xil_pn:start_ts="1455289130">
+    <transform xil_pn:end_ts="1455355130" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6274275259003823655" xil_pn:start_ts="1455355130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455289130" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4900216971465268963" xil_pn:start_ts="1455289130">
+    <transform xil_pn:end_ts="1455355130" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2098934229527881071" xil_pn:start_ts="1455355130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1455289130" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1102876936290403628" xil_pn:start_ts="1455289130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1455431755" xil_pn:in_ck="-1563354464352392167" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1455431755">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../FA/FA.vhd"/>
+      <outfile xil_pn:name="../HA/HA.vhd"/>
+      <outfile xil_pn:name="FA10.vhd"/>
+      <outfile xil_pn:name="FA10_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1455431758" xil_pn:in_ck="-1563354464352392167" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2137542799947240169" xil_pn:start_ts="1455431755">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="FA10_tb_beh.prj"/>
+      <outfile xil_pn:name="FA10_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1455438315" xil_pn:in_ck="-9160299863076602068" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6061706917287582614" xil_pn:start_ts="1455438314">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="FA10_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1455215657" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1455215657">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -123,11 +161,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455215881" xil_pn:in_ck="-6597170341157736468" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3650546619177708522" xil_pn:start_ts="1455215872">
+    <transform xil_pn:end_ts="1455431026" xil_pn:in_ck="-6597170341157736468" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3650546619177708522" xil_pn:start_ts="1455431004">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="FA10.lso"/>
       <outfile xil_pn:name="FA10.ngc"/>
       <outfile xil_pn:name="FA10.ngr"/>
@@ -135,6 +175,7 @@
       <outfile xil_pn:name="FA10.stx"/>
       <outfile xil_pn:name="FA10.syr"/>
       <outfile xil_pn:name="FA10.xst"/>
+      <outfile xil_pn:name="FA10_tb_stx_beh.prj"/>
       <outfile xil_pn:name="FA10_vhdl.prj"/>
       <outfile xil_pn:name="FA10_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -145,20 +186,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455215886" xil_pn:in_ck="3069212761230" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5862042778020359596" xil_pn:start_ts="1455215881">
+    <transform xil_pn:end_ts="1455431041" xil_pn:in_ck="3069212761230" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5862042778020359596" xil_pn:start_ts="1455431026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="FA10.bld"/>
       <outfile xil_pn:name="FA10.ngd"/>
       <outfile xil_pn:name="FA10_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455215890" xil_pn:in_ck="3069212761231" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455215886">
+    <transform xil_pn:end_ts="1455431057" xil_pn:in_ck="3069212761231" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455431041">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="FA10.pcf"/>
       <outfile xil_pn:name="FA10_map.map"/>
       <outfile xil_pn:name="FA10_map.mrp"/>
@@ -169,9 +210,10 @@
       <outfile xil_pn:name="FA10_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455215897" xil_pn:in_ck="3639845953805261608" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1455215890">
+    <transform xil_pn:end_ts="1455431074" xil_pn:in_ck="3639845953805261608" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1455431057">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="FA10.ncd"/>
       <outfile xil_pn:name="FA10.pad"/>
       <outfile xil_pn:name="FA10.par"/>
@@ -183,9 +225,10 @@
       <outfile xil_pn:name="FA10_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455215897" xil_pn:in_ck="3069212761099" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1455215894">
+    <transform xil_pn:end_ts="1455431074" xil_pn:in_ck="3069212761099" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1455431070">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="FA10.twr"/>
       <outfile xil_pn:name="FA10.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

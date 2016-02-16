@@ -24,7 +24,7 @@ architecture FA10_arch of FA10 is
 --		FA0: FA port map(A(0),B(0),Cin,Sout(0),D(0));
 		FA1: FA port map(A(1),B(1),D(0),Sout(1),D(1));
 		FA2: FA port map(A(2),B(2),D(1),Sout(2),D(2));
-		F3A: FA port map(A(3),B(3),D(2),Sout(3),D(3));
+		FA3: FA port map(A(3),B(3),D(2),Sout(3),D(3));
 		FA4: FA port map(A(4),B(4),D(3),Sout(4),D(4));
 		FA5: FA port map(A(5),B(5),D(4),Sout(5),D(5));
 		FA6: FA port map(A(6),B(6),D(5),Sout(6),D(6));

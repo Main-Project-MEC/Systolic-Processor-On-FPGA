@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.14 secs
  
 --> Reading design: FA10.prj
 
@@ -296,7 +296,7 @@ Delay:               22.017ns (Levels of Logic = 11)
      IBUF:I->O             2   0.821   1.216  A_1_IBUF (A_1_IBUF)
      LUT4:I0->O            2   0.551   1.072  FA1/Cout1 (D<1>)
      LUT3:I1->O            2   0.551   1.072  FA2/Cout1 (D<2>)
-     LUT3:I1->O            2   0.551   1.072  F3A/Cout1 (D<3>)
+     LUT3:I1->O            2   0.551   1.072  FA3/Cout1 (D<3>)
      LUT3:I1->O            2   0.551   1.072  FA4/Cout1 (D<4>)
      LUT3:I1->O            2   0.551   1.072  FA5/Cout1 (D<5>)
      LUT3:I1->O            2   0.551   1.072  FA6/Cout1 (D<6>)
@@ -311,12 +311,12 @@ Delay:               22.017ns (Levels of Logic = 11)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.78 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.03 secs
  
 --> 
 
-Total memory usage is 250648 kilobytes
+Total memory usage is 250620 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
