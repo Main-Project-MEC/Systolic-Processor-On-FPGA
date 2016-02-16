@@ -108,12 +108,12 @@ Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files
 Architecture dff_pc_arch of Entity dff_pc is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" in Library work.
 Entity <pipo10> compiled.
-Entity <PIPO10> (Architecture <PIPO10_arch>) compiled.
+Entity <pipo10> (Architecture <pipo10_arch>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <PIPO10> in library <work> (architecture <PIPO10_arch>).
+Analyzing hierarchy for entity <PIPO10> in library <work> (architecture <pipo10_arch>).
 
 Analyzing hierarchy for entity <DFF_PC> in library <work> (architecture <dff_pc_arch>).
 
@@ -121,8 +121,7 @@ Analyzing hierarchy for entity <DFF_PC> in library <work> (architecture <dff_pc_
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <PIPO10> in library <work> (Architecture <PIPO10_arch>).
-WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 17: Unconnected output port 'Qnot' of component 'DFF_PC'.
+Analyzing Entity <PIPO10> in library <work> (Architecture <pipo10_arch>).
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 18: Unconnected output port 'Qnot' of component 'DFF_PC'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 19: Unconnected output port 'Qnot' of component 'DFF_PC'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 20: Unconnected output port 'Qnot' of component 'DFF_PC'.
@@ -132,6 +131,7 @@ WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/P
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 24: Unconnected output port 'Qnot' of component 'DFF_PC'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 25: Unconnected output port 'Qnot' of component 'DFF_PC'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 26: Unconnected output port 'Qnot' of component 'DFF_PC'.
+WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" line 27: Unconnected output port 'Qnot' of component 'DFF_PC'.
 Entity <PIPO10> analyzed. Unit <PIPO10> generated.
 
 Analyzing Entity <DFF_PC> in library <work> (Architecture <dff_pc_arch>).
@@ -337,12 +337,12 @@ Offset:              7.165ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.20 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.64 secs
  
 --> 
 
-Total memory usage is 250700 kilobytes
+Total memory usage is 250636 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (   0 filtered)

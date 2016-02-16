@@ -29,7 +29,7 @@ NGDBUILD Design Results Summary:
 Total memory usage is 178892 kilobytes
 
 Writing NGD file "PIPO10.ngd" ...
-Total REAL time to NGDBUILD completion:  8 sec
+Total REAL time to NGDBUILD completion:  3 sec
 Total CPU time to NGDBUILD completion:   3 sec
 
 Writing NGDBUILD log file "PIPO10.bld"...

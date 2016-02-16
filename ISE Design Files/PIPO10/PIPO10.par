@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Tue Feb 16 21:15:36 2016
+PUTHUKKADEN::  Tue Feb 16 21:54:10 2016
 
 par -w -intstyle ise -ol high -t 1 PIPO10_map.ncd PIPO10.ncd PIPO10.pcf 
 
@@ -35,50 +35,50 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 6 secs 
-Finished initial Timing Analysis.  REAL time: 6 secs 
+Starting initial Timing Analysis.  REAL time: 0 secs 
+Finished initial Timing Analysis.  REAL time: 0 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 7 secs 
+Total REAL time at the beginning of Placer: 0 secs 
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:102) REAL time: 12 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:102) REAL time: 0 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:102) REAL time: 12 secs 
+Phase 2.7  Design Feasibility Check (Checksum:102) REAL time: 0 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:102) REAL time: 12 secs 
+Phase 3.31  Local Placement Optimization (Checksum:102) REAL time: 0 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:181b7ff2) REAL time: 13 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:181b7ff2) REAL time: 1 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:181b7ff2) REAL time: 13 secs 
+Phase 5.36  Local Placement Optimization (Checksum:181b7ff2) REAL time: 1 secs 
 
 Phase 6.3  Local Placement Optimization
 
-Phase 6.3  Local Placement Optimization (Checksum:cbb80b11) REAL time: 13 secs 
+Phase 6.3  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 13 secs 
+Phase 7.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
 
 Phase 8.8  Global Placement
-Phase 8.8  Global Placement (Checksum:cbb80b11) REAL time: 13 secs 
+Phase 8.8  Global Placement (Checksum:cbb80b11) REAL time: 1 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 13 secs 
+Phase 9.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:cb7a2a97) REAL time: 13 secs 
+Phase 10.18  Placement Optimization (Checksum:cb7a2a97) REAL time: 1 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:cb7a2a97) REAL time: 13 secs 
+Phase 11.5  Local Placement Optimization (Checksum:cb7a2a97) REAL time: 1 secs 
 
-Total REAL time to Placer completion: 13 secs 
+Total REAL time to Placer completion: 1 secs 
 Total CPU  time to Placer completion: 1 secs 
 Writing design to file PIPO10.ncd
 
@@ -87,25 +87,25 @@ Writing design to file PIPO10.ncd
 Starting Router
 
 
-Phase  1  : 32 unrouted;      REAL time: 13 secs 
+Phase  1  : 32 unrouted;      REAL time: 1 secs 
 
-Phase  2  : 21 unrouted;      REAL time: 13 secs 
+Phase  2  : 21 unrouted;      REAL time: 1 secs 
 
-Phase  3  : 0 unrouted;      REAL time: 13 secs 
+Phase  3  : 0 unrouted;      REAL time: 1 secs 
 
-Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 13 secs 
+Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 13 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
 Updating file: PIPO10.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 14 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
-Total REAL time to Router completion: 14 secs 
+Total REAL time to Router completion: 1 secs 
 Total CPU time to Router completion: 1 secs 
 
 Partition Implementation Status
@@ -153,7 +153,7 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 14 secs 
+Total REAL time to PAR completion: 1 secs 
 Total CPU time to PAR completion: 1 secs 
 
 Peak Memory Usage:  243 MB
