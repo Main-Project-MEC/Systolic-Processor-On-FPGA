@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Tue Feb 16 21:54:10 2016
+PUTHUKKADEN::  Wed Feb 17 14:28:28 2016
 
 par -w -intstyle ise -ol high -t 1 PIPO10_map.ncd PIPO10.ncd PIPO10.pcf 
 
@@ -25,8 +25,8 @@ Device speed data version:  "PRODUCTION 1.39 2013-10-13".
 Device Utilization Summary:
 
    Number of BUFGMUXs                        1 out of 8      12%
-   Number of External IOBs                  22 out of 97     22%
-      Number of LOCed IOBs                   0 out of 22      0%
+   Number of External IOBs                  23 out of 97     23%
+      Number of LOCed IOBs                   0 out of 23      0%
 
 
 
@@ -44,39 +44,39 @@ Total REAL time at the beginning of Placer: 0 secs
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:102) REAL time: 0 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:119) REAL time: 0 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:102) REAL time: 0 secs 
+Phase 2.7  Design Feasibility Check (Checksum:119) REAL time: 0 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:102) REAL time: 0 secs 
+Phase 3.31  Local Placement Optimization (Checksum:119) REAL time: 0 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:181b7ff2) REAL time: 1 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:1958f231) REAL time: 1 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:181b7ff2) REAL time: 1 secs 
+Phase 5.36  Local Placement Optimization (Checksum:1958f231) REAL time: 1 secs 
 
 Phase 6.3  Local Placement Optimization
 
-Phase 6.3  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
+Phase 6.3  Local Placement Optimization (Checksum:eabb2c71) REAL time: 1 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
+Phase 7.5  Local Placement Optimization (Checksum:eabb2c71) REAL time: 1 secs 
 
 Phase 8.8  Global Placement
-Phase 8.8  Global Placement (Checksum:cbb80b11) REAL time: 1 secs 
+Phase 8.8  Global Placement (Checksum:eabb2c71) REAL time: 1 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:cbb80b11) REAL time: 1 secs 
+Phase 9.5  Local Placement Optimization (Checksum:eabb2c71) REAL time: 1 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:cb7a2a97) REAL time: 1 secs 
+Phase 10.18  Placement Optimization (Checksum:c9b3c70b) REAL time: 1 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:cb7a2a97) REAL time: 1 secs 
+Phase 11.5  Local Placement Optimization (Checksum:c9b3c70b) REAL time: 1 secs 
 
 Total REAL time to Placer completion: 1 secs 
 Total CPU  time to Placer completion: 1 secs 
@@ -87,13 +87,13 @@ Writing design to file PIPO10.ncd
 Starting Router
 
 
-Phase  1  : 32 unrouted;      REAL time: 1 secs 
+Phase  1  : 42 unrouted;      REAL time: 1 secs 
 
-Phase  2  : 21 unrouted;      REAL time: 1 secs 
+Phase  2  : 31 unrouted;      REAL time: 1 secs 
 
-Phase  3  : 0 unrouted;      REAL time: 1 secs 
+Phase  3  : 2 unrouted;      REAL time: 1 secs 
 
-Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
+Phase  4  : 2 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 

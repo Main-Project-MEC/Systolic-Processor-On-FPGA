@@ -9,7 +9,7 @@ Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 16 21:54:06 2016
+Mapped Date    : Wed Feb 17 14:28:24 2016
 
 Mapping design into LUTs...
 Running directed packing...
@@ -28,11 +28,11 @@ Logic Distribution:
     Number of Slices containing only related logic:       0 out of       0   0%
     Number of Slices containing unrelated logic:          0 out of       0   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Number of bonded IOBs:                 22 out of      97   22%
+  Number of bonded IOBs:                 23 out of      97   23%
     IOB Flip Flops:                      10
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                0.91
+Average Fanout of Non-Clock Nets:                0.83
 
 Peak Memory Usage:  240 MB
 Total REAL time to MAP completion:  0 secs 

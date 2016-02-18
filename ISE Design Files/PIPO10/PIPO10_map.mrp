@@ -9,7 +9,7 @@ Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 16 21:54:06 2016
+Mapped Date    : Wed Feb 17 14:28:24 2016
 
 Design Summary
 --------------
@@ -20,11 +20,11 @@ Logic Distribution:
     Number of Slices containing only related logic:       0 out of       0   0%
     Number of Slices containing unrelated logic:          0 out of       0   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Number of bonded IOBs:                 22 out of      97   22%
+  Number of bonded IOBs:                 23 out of      97   23%
     IOB Flip Flops:                      10
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                0.91
+Average Fanout of Non-Clock Nets:                0.83
 
 Peak Memory Usage:  240 MB
 Total REAL time to MAP completion:  0 secs 
@@ -72,7 +72,6 @@ Section 2 - Warnings
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network Preset has no load.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -96,6 +95,7 @@ Section 6 - IOB Properties
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | CLK                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | Clear                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| Preset                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | Rin<0>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
 | Rin<1>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
 | Rin<2>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |

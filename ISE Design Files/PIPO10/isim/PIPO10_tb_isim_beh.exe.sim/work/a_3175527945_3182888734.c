@@ -22,7 +22,9 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd";
+extern char *IEEE_P_2592010699;
 
+unsigned char ieee_p_2592010699_sub_1690584930_503743352(char *, unsigned char );
 
 
 static void work_a_3175527945_3182888734_p_0(char *t0)
@@ -49,17 +51,24 @@ LAB0:    xsi_set_current_line(18, ng0);
     if (t4 != 0)
         goto LAB2;
 
-LAB4:    t1 = (t0 + 1152U);
-    t4 = xsi_signal_has_event(t1);
-    if (t4 == 1)
-        goto LAB7;
-
-LAB8:    t3 = (unsigned char)0;
-
-LAB9:    if (t3 != 0)
+LAB4:    t1 = (t0 + 1352U);
+    t2 = *((char **)t1);
+    t3 = *((unsigned char *)t2);
+    t4 = (t3 == (unsigned char)2);
+    if (t4 != 0)
         goto LAB5;
 
-LAB6:
+LAB6:    t1 = (t0 + 1152U);
+    t4 = xsi_signal_has_event(t1);
+    if (t4 == 1)
+        goto LAB9;
+
+LAB10:    t3 = (unsigned char)0;
+
+LAB11:    if (t3 != 0)
+        goto LAB7;
+
+LAB8:
 LAB3:    t1 = (t0 + 3312);
     *((int *)t1) = 1;
 
@@ -75,6 +84,16 @@ LAB2:    xsi_set_current_line(19, ng0);
     goto LAB3;
 
 LAB5:    xsi_set_current_line(21, ng0);
+    t1 = (t0 + 3392);
+    t5 = (t1 + 56U);
+    t6 = *((char **)t5);
+    t7 = (t6 + 56U);
+    t8 = *((char **)t7);
+    *((unsigned char *)t8) = (unsigned char)3;
+    xsi_driver_first_trans_fast_port(t1);
+    goto LAB3;
+
+LAB7:    xsi_set_current_line(23, ng0);
     t2 = (t0 + 1032U);
     t6 = *((char **)t2);
     t11 = *((unsigned char *)t6);
@@ -85,14 +104,26 @@ LAB5:    xsi_set_current_line(21, ng0);
     t13 = *((char **)t12);
     *((unsigned char *)t13) = t11;
     xsi_driver_first_trans_fast_port(t2);
+    xsi_set_current_line(24, ng0);
+    t1 = (t0 + 1032U);
+    t2 = *((char **)t1);
+    t3 = *((unsigned char *)t2);
+    t4 = ieee_p_2592010699_sub_1690584930_503743352(IEEE_P_2592010699, t3);
+    t1 = (t0 + 3456);
+    t5 = (t1 + 56U);
+    t6 = *((char **)t5);
+    t7 = (t6 + 56U);
+    t8 = *((char **)t7);
+    *((unsigned char *)t8) = t4;
+    xsi_driver_first_trans_fast_port(t1);
     goto LAB3;
 
-LAB7:    t2 = (t0 + 1192U);
+LAB9:    t2 = (t0 + 1192U);
     t5 = *((char **)t2);
     t9 = *((unsigned char *)t5);
     t10 = (t9 == (unsigned char)3);
     t3 = t10;
-    goto LAB9;
+    goto LAB11;
 
 }
 

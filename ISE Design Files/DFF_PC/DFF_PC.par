@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Mon Feb 15 16:01:58 2016
+PUTHUKKADEN::  Fri Feb 19 00:20:52 2016
 
 par -w -intstyle ise -ol high -t 1 DFF_PC_map.ncd DFF_PC.ncd DFF_PC.pcf 
 
@@ -25,8 +25,11 @@ Device speed data version:  "PRODUCTION 1.39 2013-10-13".
 Device Utilization Summary:
 
    Number of BUFGMUXs                        1 out of 8      12%
-   Number of External IOBs                   4 out of 97      4%
-      Number of LOCed IOBs                   0 out of 4       0%
+   Number of External IOBs                   6 out of 97      6%
+      Number of LOCed IOBs                   0 out of 6       0%
+
+   Number of Slices                          1 out of 3584    1%
+      Number of SLICEMs                      0 out of 1792    0%
 
 
 
@@ -44,39 +47,40 @@ Total REAL time at the beginning of Placer: 0 secs
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:f) REAL time: 0 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:21) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:f) REAL time: 0 secs 
+Phase 2.7  Design Feasibility Check (Checksum:21) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:f) REAL time: 0 secs 
+Phase 3.31  Local Placement Optimization (Checksum:21) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
-
-Phase 4.2  Initial Clock and IO Placement (Checksum:453522f) REAL time: 0 secs 
+.............
+Phase 4.2  Initial Clock and IO Placement (Checksum:6ce3691) REAL time: 1 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:453522f) REAL time: 0 secs 
+Phase 5.36  Local Placement Optimization (Checksum:6ce3691) REAL time: 1 secs 
 
 Phase 6.3  Local Placement Optimization
-
-Phase 6.3  Local Placement Optimization (Checksum:5d6c865) REAL time: 0 secs 
+.............
+Phase 6.3  Local Placement Optimization (Checksum:b68cd83) REAL time: 1 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:5d6c865) REAL time: 0 secs 
+Phase 7.5  Local Placement Optimization (Checksum:b68cd83) REAL time: 1 secs 
 
 Phase 8.8  Global Placement
-Phase 8.8  Global Placement (Checksum:5d6c865) REAL time: 0 secs 
+..
+Phase 8.8  Global Placement (Checksum:f16f9f8) REAL time: 1 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:5d6c865) REAL time: 1 secs 
+Phase 9.5  Local Placement Optimization (Checksum:f16f9f8) REAL time: 1 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:5d6c865) REAL time: 1 secs 
+Phase 10.18  Placement Optimization (Checksum:f16f9f8) REAL time: 1 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:5d6c865) REAL time: 1 secs 
+Phase 11.5  Local Placement Optimization (Checksum:f16f9f8) REAL time: 1 secs 
 
 Total REAL time to Placer completion: 1 secs 
 Total CPU  time to Placer completion: 1 secs 
@@ -87,9 +91,9 @@ Writing design to file DFF_PC.ncd
 Starting Router
 
 
-Phase  1  : 5 unrouted;      REAL time: 1 secs 
+Phase  1  : 11 unrouted;      REAL time: 1 secs 
 
-Phase  2  : 3 unrouted;      REAL time: 1 secs 
+Phase  2  : 8 unrouted;      REAL time: 1 secs 
 
 Phase  3  : 0 unrouted;      REAL time: 1 secs 
 
@@ -124,7 +128,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           CLK_BUFGP |      BUFGMUX0| No   |    1 |  0.000     |  1.073      |
+|           CLK_BUFGP |      BUFGMUX0| No   |    2 |  0.000     |  1.073      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing

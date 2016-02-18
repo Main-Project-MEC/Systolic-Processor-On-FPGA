@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-16T21:34:23</DateModified>
+  <DateModified>2016-02-17T14:27:53</DateModified>
   <ModuleName>PIPO10</ModuleName>
-  <SummaryTimeStamp>2016-02-16T21:15:56</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-02-17T14:25:00</SummaryTimeStamp>
   <SavedFilePath>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/iseconfig/PIPO10.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10\</ImplementationReportsDirectory>
   <DateInitialized>2016-02-16T15:23:31</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
@@ -19,7 +19,7 @@
     <toc-item title="Detailed Reports" target="Detailed Reports" />
    </view>
    <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="PIPO10_envsettings.html" label="System Settings" />
-   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="PIPO10_map.xrpt" label="IOB Properties" />
+   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="PIPO10_map.xrpt" showConstraints="0" label="IOB Properties" />
    <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Control_Sets" file="PIPO10_map.xrpt" label="Control Set Information" />
    <view inputState="Translated" program="map" locator="MAP_MODULE_HIERARCHY" contextTags="FPGA_ONLY" type="Module_Utilization" file="PIPO10_map.xrpt" label="Module Level Utilization" />
    <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="PIPO10.ptwx" label="Timing Constraints" translator="ptwxToTableXML.xslt" />

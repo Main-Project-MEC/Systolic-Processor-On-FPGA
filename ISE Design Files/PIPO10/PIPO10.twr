@@ -61,20 +61,20 @@ Clock CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Rout<0>     |    8.683(R)|CLK_BUFGP         |   0.000|
-Rout<1>     |    8.267(R)|CLK_BUFGP         |   0.000|
-Rout<2>     |    8.286(R)|CLK_BUFGP         |   0.000|
-Rout<3>     |    8.286(R)|CLK_BUFGP         |   0.000|
-Rout<4>     |    8.286(R)|CLK_BUFGP         |   0.000|
-Rout<5>     |    8.663(R)|CLK_BUFGP         |   0.000|
-Rout<6>     |    8.802(R)|CLK_BUFGP         |   0.000|
+Rout<0>     |    8.294(R)|CLK_BUFGP         |   0.000|
+Rout<1>     |    8.567(R)|CLK_BUFGP         |   0.000|
+Rout<2>     |    7.957(R)|CLK_BUFGP         |   0.000|
+Rout<3>     |    8.791(R)|CLK_BUFGP         |   0.000|
+Rout<4>     |    7.962(R)|CLK_BUFGP         |   0.000|
+Rout<5>     |    9.180(R)|CLK_BUFGP         |   0.000|
+Rout<6>     |    7.962(R)|CLK_BUFGP         |   0.000|
 Rout<7>     |    8.286(R)|CLK_BUFGP         |   0.000|
-Rout<8>     |    8.671(R)|CLK_BUFGP         |   0.000|
-Rout<9>     |    8.663(R)|CLK_BUFGP         |   0.000|
+Rout<8>     |    9.140(R)|CLK_BUFGP         |   0.000|
+Rout<9>     |    8.286(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 
-Analysis completed Tue Feb 16 21:54:14 2016 
+Analysis completed Wed Feb 17 14:28:32 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

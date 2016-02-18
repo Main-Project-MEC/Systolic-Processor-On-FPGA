@@ -1,102 +1,50 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   14:17:16 02/14/2016
--- Design Name:   
--- Module Name:   E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_tb.vhd
--- Project Name:  DFF_PC
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: DFF_PC
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
  
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+entity DFF_PC_tb is
+end DFF_PC_tb;
  
-ENTITY DFF_tb IS
-END DFF_tb;
- 
-ARCHITECTURE behavior OF DFF_tb IS 
- 
-    -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT DFF_PC
-    PORT(
-         D : IN  std_logic;
-         CLK : IN  std_logic;
-         Preset : IN  std_logic;
-         Clear : IN  std_logic;
-         Q : OUT  std_logic;
-         Qnot : OUT  std_logic
+architecture tb of DFF_PC_tb is
+	component DFF_PC
+	port( D, CLK, preset, clear: in  std_logic;
+         Q : out  std_logic;
+         Qnot : out  std_logic
         );
-    END COMPONENT;
-    
-
-   --Inputs
-   signal D : std_logic := '0';
+	end component;
+   
+	signal D : std_logic := '0';
    signal CLK : std_logic := '0';
-   signal Preset : std_logic := '0';
-   signal Clear : std_logic := '0';
+   signal Preset : std_logic := '1';
+   signal Clear : std_logic := '1';
 
- 	--Outputs
    signal Q : std_logic;
    signal Qnot : std_logic;
 
-   -- Clock period definitions
-   constant CLK_period : time := 10 ns;
- 
-BEGIN
- 
-	-- Instantiate the Unit Under Test (UUT)
-   uut: DFF_PC PORT MAP (
-          D => D,
-          CLK => CLK,
-          Preset => Preset,
-          Clear => Clear,
-          Q => Q,
-          Qnot => Qnot
-        );
+	begin
+	mapping: DFF_PC port map(D,CLK,preset,clear,Q,Qnot);
+	
+	process
+	begin
+		CLK <= '0'; wait for 1 ps;
+		CLK <= '1'; wait for 1 ps;
+	end process;
+	
+	process
+	begin
+		D <= '0'; wait for 3 ps;
+		D <= '1'; wait for 3 ps;
+	end process;
+	
+	process
+	begin
+		preset <= '0'; wait for 5 ps;
+		preset <= '1'; wait for 40 ps;
+		clear <= '0'; wait for 5 ps;
+		clear <= '1'; wait for 40 ps;
+	end process;
+end tb;
 
-   -- Clock process definitions
-   CLK_process :process
-   begin
-		CLK <= '0';
-		wait for CLK_period/2;
-		CLK <= '1';
-		wait for CLK_period/2;
-   end process;
- 
-
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for CLK_period*10;
-
-      -- insert stimulus here 
-
-      wait;
-   end process;
-
-END;
+configuration cfg_tb of DFF_PC_tb is
+   for tb
+   end for;
+end cfg_tb;

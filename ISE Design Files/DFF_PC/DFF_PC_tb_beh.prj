@@ -1,1 +1,2 @@
 vhdl work "DFF_PC.vhd"
+vhdl work "DFF_tb.vhd"

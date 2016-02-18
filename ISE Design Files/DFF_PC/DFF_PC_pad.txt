@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Feb 15 16:02:00 2016
+Fri Feb 19 00:20:53 2016
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -146,11 +146,11 @@ Pinout by Pin Number:
 |P124      |           |DIFFM    |IO_L32P_1/GCLK4    |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |P125      |           |DIFFS    |IO_L32N_1/GCLK5    |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |P126      |           |         |VCCO_1             |         |           |0             |          |         |           |         |2.50   |          |           |                |
-|P127      |Clear      |IOB      |IO_L32P_0/GCLK6    |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |       |UNLOCATED |NO         |NONE            |
-|P128      |Q          |IOB      |IO_L32N_0/GCLK7    |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |       |UNLOCATED |YES        |NONE            |
-|P129      |D          |IOB      |IO_L31P_0/VREF_0   |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |       |UNLOCATED |NO         |NONE            |
-|P130      |           |DIFFS    |IO_L31N_0          |UNUSED   |           |0             |          |         |           |         |       |          |           |                |
-|P131      |           |DIFFM    |IO_L30P_0          |UNUSED   |           |0             |          |         |           |         |       |          |           |                |
+|P127      |preset     |IOB      |IO_L32P_0/GCLK6    |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |       |UNLOCATED |NO         |NONE            |
+|P128      |clear      |IOB      |IO_L32N_0/GCLK7    |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |       |UNLOCATED |NO         |NONE            |
+|P129      |Q          |IOB      |IO_L31P_0/VREF_0   |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |       |UNLOCATED |YES        |NONE            |
+|P130      |Qnot       |IOB      |IO_L31N_0          |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |       |UNLOCATED |YES        |NONE            |
+|P131      |D          |IOB      |IO_L30P_0          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |       |UNLOCATED |NO         |NONE            |
 |P132      |           |DIFFS    |IO_L30N_0          |UNUSED   |           |0             |          |         |           |         |       |          |           |                |
 |P133      |           |         |VCCINT             |         |           |              |          |         |           |         |1.2    |          |           |                |
 |P134      |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5    |          |           |                |
