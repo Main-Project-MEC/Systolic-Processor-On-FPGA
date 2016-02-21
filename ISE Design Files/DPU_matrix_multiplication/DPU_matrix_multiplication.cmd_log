@@ -1,0 +1,17 @@
+xst -intstyle ise -ifn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.xst" -ofn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 "DPU_matrix_multiplication.ngc" DPU_matrix_multiplication.ngd  
+xst -intstyle ise -ifn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.xst" -ofn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 "DPU_matrix_multiplication.ngc" DPU_matrix_multiplication.ngd  
+map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off -c 100 -o DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ngd DPU_matrix_multiplication.pcf 
+par -w -intstyle ise -ol high -t 1 DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ncd DPU_matrix_multiplication.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml DPU_matrix_multiplication.twx DPU_matrix_multiplication.ncd -o DPU_matrix_multiplication.twr DPU_matrix_multiplication.pcf 
+xst -intstyle ise -ifn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.xst" -ofn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 "DPU_matrix_multiplication.ngc" DPU_matrix_multiplication.ngd  
+map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off -c 100 -o DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ngd DPU_matrix_multiplication.pcf 
+par -w -intstyle ise -ol high -t 1 DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ncd DPU_matrix_multiplication.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml DPU_matrix_multiplication.twx DPU_matrix_multiplication.ncd -o DPU_matrix_multiplication.twr DPU_matrix_multiplication.pcf 
+xst -intstyle ise -ifn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.xst" -ofn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 "DPU_matrix_multiplication.ngc" DPU_matrix_multiplication.ngd  
+map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off -c 100 -o DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ngd DPU_matrix_multiplication.pcf 
+par -w -intstyle ise -ol high -t 1 DPU_matrix_multiplication_map.ncd DPU_matrix_multiplication.ncd DPU_matrix_multiplication.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml DPU_matrix_multiplication.twx DPU_matrix_multiplication.ncd -o DPU_matrix_multiplication.twr DPU_matrix_multiplication.pcf 

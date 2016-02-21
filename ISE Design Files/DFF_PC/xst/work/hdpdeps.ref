@@ -1,8 +1,0 @@
-V3 3
-FL "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" 2016/02/19.00:20:28 P.20131013
-EN work/DFF_PC 1455821434 \
-      FL "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" \
-      PB ieee/std_logic_1164 1381692176
-AR work/DFF_PC/DFF_PC_arch 1455821435 \
-      FL "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" \
-      EN work/DFF_PC 1455821434
