@@ -108,7 +108,7 @@
       <outfile xil_pn:name="PIPO4.vhd"/>
       <outfile xil_pn:name="PIPO4_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1455701546" xil_pn:in_ck="-8362889588802119557" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5168396373472216177" xil_pn:start_ts="1455701543">
+    <transform xil_pn:end_ts="1456053499" xil_pn:in_ck="-8362889588802119557" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5168396373472216177" xil_pn:start_ts="1456053496">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -117,9 +117,10 @@
       <outfile xil_pn:name="PIPO4_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1455808270" xil_pn:in_ck="2825316765751433296" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7602584081571079294" xil_pn:start_ts="1455808270">
+    <transform xil_pn:end_ts="1456053500" xil_pn:in_ck="2825316765751433296" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7602584081571079294" xil_pn:start_ts="1456053499">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -156,7 +157,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455808225" xil_pn:in_ck="-6056232551414619862" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="137312636485550814" xil_pn:start_ts="1455808209">
+    <transform xil_pn:end_ts="1456053431" xil_pn:in_ck="-6056232551414619862" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="137312636485550814" xil_pn:start_ts="1456053421">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -181,7 +182,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455808234" xil_pn:in_ck="115730308374450" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4157059507621526748" xil_pn:start_ts="1455808225">
+    <transform xil_pn:end_ts="1456053438" xil_pn:in_ck="115730308374450" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4157059507621526748" xil_pn:start_ts="1456053431">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="PIPO4.bld"/>
@@ -190,7 +191,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455808247" xil_pn:in_ck="115730308374451" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455808234">
+    <transform xil_pn:end_ts="1456053442" xil_pn:in_ck="115730308374451" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1456053438">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="PIPO4.pcf"/>
@@ -203,7 +204,7 @@
       <outfile xil_pn:name="PIPO4_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455808260" xil_pn:in_ck="8119796608563875916" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1455808247">
+    <transform xil_pn:end_ts="1456053450" xil_pn:in_ck="8119796608563875916" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="8251173951899154272" xil_pn:start_ts="1456053442">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="PIPO4.ncd"/>
@@ -217,7 +218,7 @@
       <outfile xil_pn:name="PIPO4_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455808260" xil_pn:in_ck="115730308374319" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1455808257">
+    <transform xil_pn:end_ts="1456053450" xil_pn:in_ck="115730308374319" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1456053447">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="PIPO4.twr"/>

@@ -10,7 +10,7 @@ Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Fri Feb 19 01:01:33 2016
+Mapped Date    : Sun Feb 21 16:51:19 2016
 
 Mapping design into LUTs...
 Running directed packing...
@@ -51,7 +51,7 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                3.18
 
-Peak Memory Usage:  240 MB
+Peak Memory Usage:  236 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 

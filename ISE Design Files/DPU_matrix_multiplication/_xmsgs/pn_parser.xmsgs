@@ -8,7 +8,34 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA10/FA10.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FAM/FAM.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HAM/HAM.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/MAC4/MAC4.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

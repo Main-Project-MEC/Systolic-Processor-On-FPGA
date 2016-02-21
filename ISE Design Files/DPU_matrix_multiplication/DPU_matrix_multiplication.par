@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Fri Feb 19 00:57:10 2016
+PUTHUKKADEN::  Sun Feb 21 16:50:17 2016
 
 par -w -intstyle ise -ol high -t 1 DPU_matrix_multiplication_map.ncd
 DPU_matrix_multiplication.ncd DPU_matrix_multiplication.pcf 
@@ -39,13 +39,13 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 0 secs 
-Finished initial Timing Analysis.  REAL time: 0 secs 
+Starting initial Timing Analysis.  REAL time: 1 secs 
+Finished initial Timing Analysis.  REAL time: 1 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 0 secs 
-Total CPU  time at the beginning of Placer: 0 secs 
+Total REAL time at the beginning of Placer: 1 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
 Phase 1.1  Initial Placement Analysis (Checksum:7e5) REAL time: 1 secs 
@@ -101,9 +101,9 @@ Phase  2  : 202 unrouted;      REAL time: 2 secs
 
 Phase  3  : 78 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 73 unrouted; (Par is working to improve performance)     REAL time: 2 secs 
+Phase  4  : 73 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 2 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Updating file: DPU_matrix_multiplication.ncd with current fully routed design.
 
@@ -174,7 +174,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 3 secs 
 Total CPU time to PAR completion: 3 secs 
 
-Peak Memory Usage:  243 MB
+Peak Memory Usage:  239 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

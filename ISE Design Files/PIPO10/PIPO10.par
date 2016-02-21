@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Wed Feb 17 14:28:28 2016
+PUTHUKKADEN::  Sun Feb 21 16:49:19 2016
 
 par -w -intstyle ise -ol high -t 1 PIPO10_map.ncd PIPO10.ncd PIPO10.pcf 
 
@@ -156,7 +156,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 1 secs 
 Total CPU time to PAR completion: 1 secs 
 
-Peak Memory Usage:  243 MB
+Peak Memory Usage:  239 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

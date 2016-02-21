@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: DPU_matrix_multiplication.prj
 
@@ -105,26 +105,33 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd" in Library work.
-Architecture ha_arch of Entity ha is up to date.
+Entity <ha> compiled.
+Entity <ha> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" in Library work.
-Architecture dff_pc_arch of Entity dff_pc is up to date.
+Entity <dff_pc> compiled.
+Entity <dff_pc> (Architecture <dff_pc_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd" in Library work.
 Architecture fa_arch of Entity fa is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HAM/HAM.vhd" in Library work.
-Architecture ha_arch of Entity ham is up to date.
+Entity <ham> compiled.
+Entity <ham> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FAM/FAM.vhd" in Library work.
-Architecture fam_arch of Entity fam is up to date.
+Entity <fam> compiled.
+Entity <fam> (Architecture <fam_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd" in Library work.
-Architecture pipo4_arch of Entity pipo4 is up to date.
+Entity <pipo4> compiled.
+Entity <pipo4> (Architecture <pipo4_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/MAC4/MAC4.vhd" in Library work.
-Architecture mac4_arch of Entity mac4 is up to date.
+Entity <mac4> compiled.
+Entity <mac4> (Architecture <mac4_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA10/FA10.vhd" in Library work.
-Architecture fa10_arch of Entity fa10 is up to date.
+Entity <fa10> compiled.
+Entity <fa10> (Architecture <fa10_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" in Library work.
-Architecture pipo10_arch of Entity pipo10 is up to date.
+Entity <pipo10> compiled.
+Entity <pipo10> (Architecture <pipo10_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" in Library work.
-Entity <dpu_matrix_multiplication> compiled.
-Entity <dpu_matrix_multiplication> (Architecture <dpu_matrix_multiplication_arch>) compiled.
+Architecture dpu_matrix_multiplication_arch of Entity dpu_matrix_multiplication is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -518,11 +525,11 @@ Offset:              7.367ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.93 secs
+Total CPU time to Xst completion: 7.20 secs
  
 --> 
 
-Total memory usage is 250668 kilobytes
+Total memory usage is 246624 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   35 (   0 filtered)

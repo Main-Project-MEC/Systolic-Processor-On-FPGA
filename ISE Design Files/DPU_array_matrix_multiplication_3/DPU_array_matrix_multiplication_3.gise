@@ -63,19 +63,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="../DFF_PC/DFF_PC.vhd"/>
-      <outfile xil_pn:name="../DPU_matrix_multiplication/DPU_matrix_multiplication.vhd"/>
-      <outfile xil_pn:name="../FA/FA.vhd"/>
-      <outfile xil_pn:name="../FA10/FA10.vhd"/>
-      <outfile xil_pn:name="../FAM/FAM.vhd"/>
-      <outfile xil_pn:name="../HA/HA.vhd"/>
-      <outfile xil_pn:name="../HAM/HAM.vhd"/>
-      <outfile xil_pn:name="../MAC4/MAC4.vhd"/>
-      <outfile xil_pn:name="../PIPO10/PIPO10.vhd"/>
-      <outfile xil_pn:name="../PIPO4/PIPO4.vhd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.vhd"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1455856762" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9044832904953873877" xil_pn:start_ts="1455856762">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -117,7 +109,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455823886" xil_pn:in_ck="6212886869075216542" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3001097809205046726" xil_pn:start_ts="1455823873">
+    <transform xil_pn:end_ts="1456053672" xil_pn:in_ck="-4556325137473520304" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3001097809205046726" xil_pn:start_ts="1456053660">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -138,7 +130,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1455823892" xil_pn:in_ck="-3541194604469625952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8828874161648500680" xil_pn:start_ts="1455823886">
+    <transform xil_pn:end_ts="1456053678" xil_pn:in_ck="-3541194604469625952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8828874161648500680" xil_pn:start_ts="1456053672">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="DPU_array_matrix_multiplication_3.bld"/>
@@ -147,7 +139,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1455823896" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1455823892">
+    <transform xil_pn:end_ts="1456053682" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1456053678">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="DPU_array_matrix_multiplication_3.pcf"/>

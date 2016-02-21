@@ -16,5 +16,5 @@ Compiling architecture tb of entity pipo4_tb
 Time Resolution for simulation is 1ps.
 Compiled 7 VHDL Units
 Built simulation executable E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4_tb_isim_beh.exe
-Fuse Memory Usage: 27744 KB
-Fuse CPU Usage: 467 ms
+Fuse Memory Usage: 27632 KB
+Fuse CPU Usage: 436 ms

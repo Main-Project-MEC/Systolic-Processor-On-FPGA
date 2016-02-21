@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: DPU_array_matrix_multiplication_3.prj
 
@@ -105,33 +105,38 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd" in Library work.
-Architecture ha_arch of Entity ha is up to date.
-Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" in Library work.
-Architecture dff_pc_arch of Entity dff_pc is up to date.
+Entity <ha> compiled.
+Entity <ha> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd" in Library work.
-Architecture fa_arch of Entity fa is up to date.
+Entity <fa> compiled.
+Entity <fa> (Architecture <fa_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HAM/HAM.vhd" in Library work.
-Architecture ha_arch of Entity ham is up to date.
+Entity <ham> compiled.
+Entity <ham> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FAM/FAM.vhd" in Library work.
-Architecture fam_arch of Entity fam is up to date.
+Entity <fam> compiled.
+Entity <fam> (Architecture <fam_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd" in Library work.
-Architecture pipo4_arch of Entity pipo4 is up to date.
+Entity <pipo4> compiled.
+Entity <pipo4> (Architecture <pipo4_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/MAC4/MAC4.vhd" in Library work.
-Architecture mac4_arch of Entity mac4 is up to date.
+Entity <mac4> compiled.
+Entity <mac4> (Architecture <mac4_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA10/FA10.vhd" in Library work.
-Architecture fa10_arch of Entity fa10 is up to date.
+Entity <fa10> compiled.
+Entity <fa10> (Architecture <fa10_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" in Library work.
-Architecture pipo10_arch of Entity pipo10 is up to date.
+Entity <pipo10> compiled.
+Entity <pipo10> (Architecture <pipo10_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" in Library work.
 Architecture dpu_matrix_multiplication_arch of Entity dpu_matrix_multiplication is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd" in Library work.
-Entity <dpu_array_matrix_multiplication_3> compiled.
-Entity <DPU_array_matrix_multiplication_3> (Architecture <DPU_array_matrix_multiplication_3_arch>) compiled.
+Architecture dpu_array_matrix_multiplication_3_arch of Entity dpu_array_matrix_multiplication_3 is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <DPU_array_matrix_multiplication_3> in library <work> (architecture <DPU_array_matrix_multiplication_3_arch>).
+Analyzing hierarchy for entity <DPU_array_matrix_multiplication_3> in library <work> (architecture <dpu_array_matrix_multiplication_3_arch>).
 
 Analyzing hierarchy for entity <DPU_matrix_multiplication> in library <work> (architecture <dpu_matrix_multiplication_arch>).
 
@@ -159,7 +164,7 @@ Analyzing hierarchy for entity <HA> in library <work> (architecture <ha_arch>).
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <DPU_array_matrix_multiplication_3> in library <work> (Architecture <DPU_array_matrix_multiplication_3_arch>).
+Analyzing Entity <DPU_array_matrix_multiplication_3> in library <work> (Architecture <dpu_array_matrix_multiplication_3_arch>).
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd" line 42: Unconnected output port 'Bout' of component 'DPU_matrix_multiplication'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd" line 45: Unconnected output port 'Bout' of component 'DPU_matrix_multiplication'.
 WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd" line 46: Unconnected output port 'Aout' of component 'DPU_matrix_multiplication'.
@@ -593,11 +598,11 @@ Offset:              7.367ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.49 secs
+Total CPU time to Xst completion: 9.27 secs
  
 --> 
 
-Total memory usage is 266848 kilobytes
+Total memory usage is 262820 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  106 (   0 filtered)
