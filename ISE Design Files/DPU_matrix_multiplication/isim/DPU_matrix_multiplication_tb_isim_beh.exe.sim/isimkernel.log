@@ -1,0 +1,29 @@
+Command line:
+   DPU_matrix_multiplication_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55171
+
+Tue Feb 23 00:48:04 2016
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 361.509 Meg
+
+ Total Signals          : 520
+ Total Nets             : 206
+ Total Signal Drivers   : 180
+ Total Blocks           : 92
+ Total Primitive Blocks : 62
+ Total Processes        : 159
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 566
+Total Line Count : 244
+
+ Total Simulation Time: 3.84375 sec
+
+ Current Memory Usage: 676.098 Meg
+
+Tue Feb 23 00:48:49 2016
+

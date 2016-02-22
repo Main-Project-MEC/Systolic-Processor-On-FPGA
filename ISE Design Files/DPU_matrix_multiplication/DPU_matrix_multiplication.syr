@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.19 secs
  
 --> Reading design: DPU_matrix_multiplication.prj
 
@@ -105,32 +105,26 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HA/HA.vhd" in Library work.
-Entity <ha> compiled.
-Entity <ha> (Architecture <ha_arch>) compiled.
+Architecture ha_arch of Entity ha is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" in Library work.
 Architecture dff_pc_arch of Entity dff_pc is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd" in Library work.
 Architecture fa_arch of Entity fa is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HAM/HAM.vhd" in Library work.
-Entity <ham> compiled.
-Entity <ham> (Architecture <ha_arch>) compiled.
+Architecture ha_arch of Entity ham is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FAM/FAM.vhd" in Library work.
-Entity <fam> compiled.
-Entity <fam> (Architecture <fam_arch>) compiled.
+Architecture fam_arch of Entity fam is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd" in Library work.
-Entity <pipo4> compiled.
-Entity <pipo4> (Architecture <pipo4_arch>) compiled.
+Architecture pipo4_arch of Entity pipo4 is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/MAC4/MAC4.vhd" in Library work.
-Entity <mac4> compiled.
-Entity <mac4> (Architecture <mac4_arch>) compiled.
+Architecture mac4_arch of Entity mac4 is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA10/FA10.vhd" in Library work.
-Entity <fa10> compiled.
-Entity <fa10> (Architecture <fa10_arch>) compiled.
+Architecture fa10_arch of Entity fa10 is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO10/PIPO10.vhd" in Library work.
-Entity <pipo10> compiled.
-Entity <pipo10> (Architecture <pipo10_arch>) compiled.
+Architecture pipo10_arch of Entity pipo10 is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" in Library work.
-Architecture dpu_matrix_multiplication_arch of Entity dpu_matrix_multiplication is up to date.
+Entity <dpu_matrix_multiplication> compiled.
+Entity <dpu_matrix_multiplication> (Architecture <dpu_matrix_multiplication_arch>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -162,7 +156,7 @@ Analyzing hierarchy for entity <HA> in library <work> (architecture <ha_arch>).
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <DPU_matrix_multiplication> in library <work> (Architecture <dpu_matrix_multiplication_arch>).
-WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" line 60: Unconnected output port 'Cout' of component 'FA10'.
+WARNING:Xst:753 - "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" line 61: Unconnected output port 'Cout' of component 'FA10'.
 Entity <DPU_matrix_multiplication> analyzed. Unit <DPU_matrix_multiplication> generated.
 
 Analyzing Entity <PIPO4> in library <work> (Architecture <pipo4_arch>).
@@ -372,16 +366,17 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 27
+# IOs                              : 28
 
 Cell Usage :
-# BELS                             : 51
+# BELS                             : 52
 #      GND                         : 1
-#      LUT2                        : 1
+#      INV                         : 1
+#      LUT2                        : 2
 #      LUT2_D                      : 3
-#      LUT2_L                      : 2
-#      LUT3                        : 13
-#      LUT3_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 12
+#      LUT3_D                      : 2
 #      LUT3_L                      : 1
 #      LUT4                        : 17
 #      LUT4_D                      : 11
@@ -390,8 +385,8 @@ Cell Usage :
 #      FDCP                        : 26
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 26
-#      IBUF                        : 8
+# IO Buffers                       : 27
+#      IBUF                        : 9
 #      OBUF                        : 18
 =========================================================================
 
@@ -402,9 +397,9 @@ Selected Device : 3s400tq144-4
 
  Number of Slices:                       28  out of   3584     0%  
  Number of Slice Flip Flops:             18  out of   7168     0%  
- Number of 4 input LUTs:                 50  out of   7168     0%  
- Number of IOs:                          27
- Number of bonded IOBs:                  27  out of     97    27%  
+ Number of 4 input LUTs:                 51  out of   7168     0%  
+ Number of IOs:                          28
+ Number of bonded IOBs:                  28  out of     97    28%  
     IOB Flip Flops:                       8
  Number of GCLKs:                         1  out of      8    12%  
 
@@ -434,17 +429,18 @@ CLK                                | BUFGP                  | 26    |
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+------------------------+-------+
-Control Signal                     | Buffer(FF name)        | Load  |
------------------------------------+------------------------+-------+
-N0(XST_GND:G)                      | NONE(R0/DFF0/Q)        | 52    |
------------------------------------+------------------------+-------+
+---------------------------------------------+------------------------+-------+
+Control Signal                               | Buffer(FF name)        | Load  |
+---------------------------------------------+------------------------+-------+
+N0(XST_GND:G)                                | NONE(R0/DFF0/Q)        | 26    |
+R0/DFF0/clear_inv(R2/DFF0/clear_inv1_INV_0:O)| NONE(R0/DFF0/Q)        | 26    |
+---------------------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 11.694ns (Maximum Frequency: 85.514MHz)
+   Minimum period: 11.783ns (Maximum Frequency: 84.868MHz)
    Minimum input arrival time before clock: 1.901ns
    Maximum output required time after clock: 7.367ns
    Maximum combinational path delay: No path found
@@ -455,32 +451,31 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 11.694ns (frequency: 85.514MHz)
+  Clock period: 11.783ns (frequency: 84.868MHz)
   Total number of paths / destination ports: 1668 / 10
 -------------------------------------------------------------------------
-Delay:               11.694ns (Levels of Logic = 8)
-  Source:            R0/DFF0/Q (FF)
+Delay:               11.783ns (Levels of Logic = 7)
+  Source:            R0/DFF2/Q (FF)
   Destination:       R2/DFF9/Q (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: R0/DFF0/Q to R2/DFF9/Q
+  Data Path: R0/DFF2/Q to R2/DFF9/Q
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCP:C->Q             8   0.720   1.422  R0/DFF0/Q (R0/DFF0/Q)
-     LUT2_D:I0->O          1   0.551   0.827  MAC/S0_0_and00001 (S3<0>)
-     LUT4:I3->O            2   0.551   0.945  FA/FA1/Cout1 (FA/D<1>)
-     LUT3:I2->O            2   0.551   0.945  FA/FA2/Cout1 (FA/D<2>)
-     LUT3:I2->O            2   0.551   0.945  FA/FA3/Cout1 (FA/D<3>)
-     LUT3_D:I2->LO         1   0.551   0.168  FA/FA4/Cout1 (N25)
-     LUT3:I2->O            4   0.551   0.985  FA/FA5/Cout1 (FA/D<5>)
-     LUT3_L:I2->LO         1   0.551   0.126  FA/FA6/Cout1 (FA/D<6>)
+     FDCP:C->Q             7   0.720   1.405  R0/DFF2/Q (R0/DFF2/Q)
+     LUT4:I0->O            2   0.551   0.903  MAC/HAM11/H1/Mxor_Sout_Result1 (MAC/S1<1>)
+     LUT4_D:I3->O          3   0.551   1.102  MAC/FAM20/Cout1 (MAC/C2<0>)
+     LUT3:I1->O            1   0.551   0.827  MAC/HA40/Cout1_SW0 (N01)
+     LUT4_D:I3->O          1   0.551   0.827  MAC/FA41/Cout1 (MAC/C4<1>)
+     LUT4_D:I3->O          4   0.551   1.112  MAC/FA42/H2/Mxor_Sout_Result1 (S3<6>)
+     LUT3:I1->O            1   0.551   0.827  FA/FA6/Cout1 (FA/D<6>)
      LUT4:I3->O            1   0.551   0.000  FA/FA9/H2/Mxor_Sout_Result1 (S6<9>)
      FDCP:D                    0.203          R2/DFF9/Q
     ----------------------------------------
-    Total                     11.694ns (5.331ns logic, 6.363ns route)
-                                       (45.6% logic, 54.4% route)
+    Total                     11.783ns (4.780ns logic, 7.003ns route)
+                                       (40.6% logic, 59.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
@@ -523,12 +518,12 @@ Offset:              7.367ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.30 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.59 secs
  
 --> 
 
-Total memory usage is 246648 kilobytes
+Total memory usage is 250628 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   35 (   0 filtered)

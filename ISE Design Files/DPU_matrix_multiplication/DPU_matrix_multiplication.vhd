@@ -5,6 +5,7 @@ entity DPU_matrix_multiplication is
     Port ( Ain : in  STD_LOGIC_VECTOR (3 downto 0);
            Bin : in  STD_LOGIC_VECTOR (3 downto 0);
            CLK : in  STD_LOGIC;
+			  clear: in STD_LOGIC;
            Aout : out  STD_LOGIC_VECTOR (3 downto 0);
            Bout : out  STD_LOGIC_VECTOR (3 downto 0);
            Result : out  STD_LOGIC_VECTOR (9 downto 0));
@@ -42,8 +43,8 @@ architecture DPU_matrix_multiplication_arch of DPU_matrix_multiplication is
 	signal S4,S5,S6: STD_LOGIC_VECTOR (9 downto 0);
 	
 	begin
-	R0: PIPO4 port map(Ain,CLK,'1','1',S1);
-	R1: PIPO4 port map(Bin,CLK,'1','1',S2);
+	R0: PIPO4 port map(Ain,CLK,'1',clear,S1);
+	R1: PIPO4 port map(Bin,CLK,'1',clear,S2);
 	MAC: MAC4 port map(S1,S2,S3);
 	
 	S4(0)<=S3(0);
@@ -58,7 +59,7 @@ architecture DPU_matrix_multiplication_arch of DPU_matrix_multiplication is
 	S4(9)<='0';
 	
 	FA: FA10 port map(S4,S5,S6,open);
-	R2: PIPO10 port map(S6,CLK,'1','1',S5);
+	R2: PIPO10 port map(S6,CLK,'1',clear,S5);
 	Aout <= S1;
 	Bout <= S2;
 	Result <= S5;

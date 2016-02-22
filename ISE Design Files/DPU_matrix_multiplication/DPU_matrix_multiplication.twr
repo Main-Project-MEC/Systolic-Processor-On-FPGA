@@ -46,14 +46,14 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-Ain<0>      |    2.852(R)|    0.882(R)|CLK_BUFGP         |   0.000|
-Ain<1>      |    1.645(R)|    1.552(R)|CLK_BUFGP         |   0.000|
-Ain<2>      |    1.207(R)|    1.582(R)|CLK_BUFGP         |   0.000|
-Ain<3>      |    1.189(R)|    1.574(R)|CLK_BUFGP         |   0.000|
-Bin<0>      |    2.852(R)|    0.513(R)|CLK_BUFGP         |   0.000|
-Bin<1>      |    2.852(R)|    0.777(R)|CLK_BUFGP         |   0.000|
-Bin<2>      |    2.852(R)|    0.774(R)|CLK_BUFGP         |   0.000|
-Bin<3>      |    2.852(R)|    0.601(R)|CLK_BUFGP         |   0.000|
+Ain<0>      |    2.620(R)|    1.263(R)|CLK_BUFGP         |   0.000|
+Ain<1>      |    1.802(R)|    1.554(R)|CLK_BUFGP         |   0.000|
+Ain<2>      |    3.379(R)|    0.850(R)|CLK_BUFGP         |   0.000|
+Ain<3>      |    2.383(R)|    1.561(R)|CLK_BUFGP         |   0.000|
+Bin<0>      |    2.851(R)|    0.794(R)|CLK_BUFGP         |   0.000|
+Bin<1>      |    2.852(R)|    0.513(R)|CLK_BUFGP         |   0.000|
+Bin<2>      |    2.852(R)|    0.109(R)|CLK_BUFGP         |   0.000|
+Bin<3>      |    2.852(R)|    1.169(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -61,24 +61,24 @@ Clock CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Aout<0>     |    9.017(R)|CLK_BUFGP         |   0.000|
-Aout<1>     |    7.363(R)|CLK_BUFGP         |   0.000|
+Aout<0>     |    7.382(R)|CLK_BUFGP         |   0.000|
+Aout<1>     |    7.382(R)|CLK_BUFGP         |   0.000|
 Aout<2>     |    7.382(R)|CLK_BUFGP         |   0.000|
 Aout<3>     |    7.382(R)|CLK_BUFGP         |   0.000|
-Bout<0>     |    9.000(R)|CLK_BUFGP         |   0.000|
-Bout<1>     |    9.021(R)|CLK_BUFGP         |   0.000|
-Bout<2>     |    7.957(R)|CLK_BUFGP         |   0.000|
-Bout<3>     |    7.957(R)|CLK_BUFGP         |   0.000|
-Result<0>   |    9.722(R)|CLK_BUFGP         |   0.000|
-Result<1>   |    9.553(R)|CLK_BUFGP         |   0.000|
-Result<2>   |    9.806(R)|CLK_BUFGP         |   0.000|
-Result<3>   |    9.802(R)|CLK_BUFGP         |   0.000|
-Result<4>   |    9.155(R)|CLK_BUFGP         |   0.000|
-Result<5>   |    9.504(R)|CLK_BUFGP         |   0.000|
-Result<6>   |    9.561(R)|CLK_BUFGP         |   0.000|
-Result<7>   |   10.368(R)|CLK_BUFGP         |   0.000|
-Result<8>   |    9.984(R)|CLK_BUFGP         |   0.000|
-Result<9>   |    9.149(R)|CLK_BUFGP         |   0.000|
+Bout<0>     |    8.989(R)|CLK_BUFGP         |   0.000|
+Bout<1>     |    7.957(R)|CLK_BUFGP         |   0.000|
+Bout<2>     |    8.680(R)|CLK_BUFGP         |   0.000|
+Bout<3>     |    8.286(R)|CLK_BUFGP         |   0.000|
+Result<0>   |    9.521(R)|CLK_BUFGP         |   0.000|
+Result<1>   |    9.272(R)|CLK_BUFGP         |   0.000|
+Result<2>   |   10.556(R)|CLK_BUFGP         |   0.000|
+Result<3>   |    9.870(R)|CLK_BUFGP         |   0.000|
+Result<4>   |    9.481(R)|CLK_BUFGP         |   0.000|
+Result<5>   |   10.831(R)|CLK_BUFGP         |   0.000|
+Result<6>   |    9.416(R)|CLK_BUFGP         |   0.000|
+Result<7>   |   10.787(R)|CLK_BUFGP         |   0.000|
+Result<8>   |   11.730(R)|CLK_BUFGP         |   0.000|
+Result<9>   |    9.501(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -86,18 +86,18 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |   10.214|         |         |         |
+CLK            |    8.716|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Feb 22 00:00:50 2016 
+Analysis completed Tue Feb 23 00:38:56 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 152 MB
+Peak Memory Usage: 156 MB
 
 
 
