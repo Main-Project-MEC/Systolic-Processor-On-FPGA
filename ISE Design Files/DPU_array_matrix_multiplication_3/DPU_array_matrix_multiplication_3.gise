@@ -39,6 +39,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="DPU_array_matrix_multiplication_3_map.ncd" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="DPU_array_matrix_multiplication_3_map.ngm" xil_pn:subbranch="Map"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DPU_array_matrix_multiplication_3_map.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="DPU_array_matrix_multiplication_3_map_fpga_editor.log"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DPU_array_matrix_multiplication_3_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="DPU_array_matrix_multiplication_3_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPU_array_matrix_multiplication_3_summary.xml"/>
@@ -109,7 +110,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456053672" xil_pn:in_ck="-4556325137473520304" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3001097809205046726" xil_pn:start_ts="1456053660">
+    <transform xil_pn:end_ts="1456079063" xil_pn:in_ck="-4556325137473520304" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-3001097809205046726" xil_pn:start_ts="1456079047">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -130,7 +131,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456053678" xil_pn:in_ck="-3541194604469625952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8828874161648500680" xil_pn:start_ts="1456053672">
+    <transform xil_pn:end_ts="1456079173" xil_pn:in_ck="-3541194604469625952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8828874161648500680" xil_pn:start_ts="1456079165">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="DPU_array_matrix_multiplication_3.bld"/>
@@ -139,7 +140,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1456053682" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1456053678">
+    <transform xil_pn:end_ts="1456079182" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1456079173">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="DPU_array_matrix_multiplication_3.pcf"/>

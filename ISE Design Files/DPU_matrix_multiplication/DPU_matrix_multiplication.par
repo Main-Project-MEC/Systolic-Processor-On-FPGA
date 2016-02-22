@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-PUTHUKKADEN::  Sun Feb 21 16:50:17 2016
+PUTHUKKADEN::  Mon Feb 22 00:00:42 2016
 
 par -w -intstyle ise -ol high -t 1 DPU_matrix_multiplication_map.ncd
 DPU_matrix_multiplication.ncd DPU_matrix_multiplication.pcf 
@@ -45,7 +45,7 @@ Finished initial Timing Analysis.  REAL time: 1 secs
 
 Starting Placer
 Total REAL time at the beginning of Placer: 1 secs 
-Total CPU  time at the beginning of Placer: 1 secs 
+Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
 Phase 1.1  Initial Placement Analysis (Checksum:7e5) REAL time: 1 secs 
@@ -116,7 +116,7 @@ Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 3
 Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Total REAL time to Router completion: 3 secs 
-Total CPU time to Router completion: 3 secs 
+Total CPU time to Router completion: 2 secs 
 
 Partition Implementation Status
 -------------------------------

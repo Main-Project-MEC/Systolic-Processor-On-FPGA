@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: DPU_matrix_multiplication.prj
 
@@ -108,8 +108,7 @@ Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files
 Entity <ha> compiled.
 Entity <ha> (Architecture <ha_arch>) compiled.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd" in Library work.
-Entity <dff_pc> compiled.
-Entity <dff_pc> (Architecture <dff_pc_arch>) compiled.
+Architecture dff_pc_arch of Entity dff_pc is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/FA/FA.vhd" in Library work.
 Architecture fa_arch of Entity fa is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/HAM/HAM.vhd" in Library work.
@@ -524,12 +523,12 @@ Offset:              7.367ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.20 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.30 secs
  
 --> 
 
-Total memory usage is 246624 kilobytes
+Total memory usage is 246648 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   35 (   0 filtered)
