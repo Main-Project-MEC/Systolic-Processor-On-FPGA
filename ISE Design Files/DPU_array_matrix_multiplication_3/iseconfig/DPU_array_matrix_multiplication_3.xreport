@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-23T16:03:18</DateModified>
+  <DateModified>2016-02-23T19:37:53</DateModified>
   <ModuleName>DPU_array_matrix_multiplication_3</ModuleName>
   <SummaryTimeStamp>2016-02-21T23:56:22</SummaryTimeStamp>
   <SavedFilePath>E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/iseconfig/DPU_array_matrix_multiplication_3.xreport</SavedFilePath>
