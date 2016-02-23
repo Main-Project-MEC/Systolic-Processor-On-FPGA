@@ -4,23 +4,23 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="3">
-<DesignStatistics TimeStamp="Sun Feb 21 23:56:20 2016"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="3">
-<attrib name="value" value="115"/></item>
-<item name="AGG_IO" rev="3">
-<attrib name="value" value="115"/></item>
-<item name="AGG_SLICE" rev="3">
-<attrib name="value" value="327"/></item>
-<item name="NUM_4_INPUT_LUT" rev="3">
+<DeviceUsageSummary rev="5">
+<DesignStatistics TimeStamp="Tue Feb 23 16:11:15 2016"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="5">
+<attrib name="value" value="116"/></item>
+<item name="AGG_IO" rev="5">
+<attrib name="value" value="116"/></item>
+<item name="AGG_SLICE" rev="5">
+<attrib name="value" value="328"/></item>
+<item name="NUM_4_INPUT_LUT" rev="5">
 <attrib name="value" value="450"/></item>
-<item name="NUM_BONDED_IOB" rev="3">
-<attrib name="value" value="115"/></item>
-<item name="NUM_BUFGMUX" rev="3">
+<item name="NUM_BONDED_IOB" rev="5">
+<attrib name="value" value="116"/></item>
+<item name="NUM_BUFGMUX" rev="5">
 <attrib name="value" value="1"/></item>
-<item name="NUM_SLICEL" rev="3">
-<attrib name="value" value="327"/></item>
-<item name="NUM_SLICE_FF" rev="3">
+<item name="NUM_SLICEL" rev="5">
+<attrib name="value" value="328"/></item>
+<item name="NUM_SLICE_FF" rev="5">
 <attrib name="value" value="162"/></item>
 </group>
 </DesignStatistics>

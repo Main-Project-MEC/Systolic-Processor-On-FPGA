@@ -10,7 +10,7 @@ Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Sun Feb 21 23:56:16 2016
+Mapped Date    : Tue Feb 23 16:11:14 2016
 ERROR:Pack:18 - The design is too large for the given device and package. 
    Please check the Design Summary section to see which resource requirement for
    your design exceeds the resources available in the device.
@@ -32,18 +32,18 @@ Logic Utilization:
   Number of Slice Flip Flops:           162 out of   7,168    2%
   Number of 4 input LUTs:               450 out of   7,168    6%
 Logic Distribution:
-  Number of occupied Slices:            327 out of   3,584    9%
-    Number of Slices containing only related logic:     327 out of     327 100%
-    Number of Slices containing unrelated logic:          0 out of     327   0%
+  Number of occupied Slices:            328 out of   3,584    9%
+    Number of Slices containing only related logic:     328 out of     328 100%
+    Number of Slices containing unrelated logic:          0 out of     328   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
   Total Number of 4 input LUTs:         450 out of   7,168    6%
-  Number of bonded IOBs:                115 out of      97  118% (OVERMAPPED)
+  Number of bonded IOBs:                116 out of      97  119% (OVERMAPPED)
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                3.18
+Average Fanout of Non-Clock Nets:                3.47
 
-Peak Memory Usage:  236 MB
-Total REAL time to MAP completion:  4 secs 
+Peak Memory Usage:  240 MB
+Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 
 NOTES:
@@ -119,7 +119,7 @@ The trimmed logic reported below is either:
    2. part of disabled logic
    3. a side-effect of other trimmed logic
 
-The signal "DPU0/R0/DFF0/clear_inv" is unused and has been removed.
+The signal "DPU0/R0/DFF0/preset_inv" is unused and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
@@ -250,6 +250,7 @@ Section 6 - IOB Properties
 | O8<7>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | O8<8>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | O8<9>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| clear                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

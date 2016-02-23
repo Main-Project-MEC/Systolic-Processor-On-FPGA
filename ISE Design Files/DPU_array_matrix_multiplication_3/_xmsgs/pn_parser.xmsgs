@@ -8,6 +8,9 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DFF_PC/DFF_PC.vhd&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd&quot; into library work</arg>
 </msg>
 

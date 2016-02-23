@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity DPU_array_matrix_multiplication_3 is
+entity DPU_array_matrix_multiplication_3_tb is
 end DPU_array_matrix_multiplication_3_tb;
  
 architecture tb OF DPU_array_matrix_multiplication_3_tb is 
@@ -17,6 +17,7 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
          B1 : IN  std_logic_vector(3 downto 0);
          B2 : IN  std_logic_vector(3 downto 0);
          CLK : IN  std_logic;
+			clear: IN std_logic;
          O0 : OUT  std_logic_vector(9 downto 0);
          O1 : OUT  std_logic_vector(9 downto 0);
          O2 : OUT  std_logic_vector(9 downto 0);
@@ -37,6 +38,7 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
    signal B1 : std_logic_vector(3 downto 0) := (others => '0');
    signal B2 : std_logic_vector(3 downto 0) := (others => '0');
    signal CLK : std_logic := '0';
+	signal clear: std_logic := '0';
 
    signal O0 : std_logic_vector(9 downto 0);
    signal O1 : std_logic_vector(9 downto 0);
@@ -50,7 +52,58 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
 
  
 	begin
-   uut: DPU_array_matrix_multiplication_3 port map(A0,A1,A2,B0,B1,B2,CLK,O0,O1,O2,O3,O4,O5,O6,O7,O8);
+   uut: DPU_array_matrix_multiplication_3 port map(A0,A1,A2,B0,B1,B2,CLK,clear,O0,O1,O2,O3,O4,O5,O6,O7,O8);
 	
-	signal A0,A1,A2,B0,B1,B2: 
+	
+	process
+	begin
+		clear<='0';wait for 1 ps;
+		clear<='1';
+		wait;
+	end process;
+		
+	process
+	begin
+		CLK<='1'; wait for 1 ps;
+		CLK<='0'; wait for 1 ps;
+	end process;
+	
+	process
+	begin
+		wait for 2 ps;
+		A0<=x"1"; 
+		B0<=x"1";	
+		wait for 6 ps;
+		A0<=x"0";
+		B0<=x"0";
+		wait;
+	end process;
+		
+	process
+	begin
+		wait for 2 ps;
+		A1<=x"0";
+		B1<=x"0";
+		wait for 2 ps;
+		A1<=x"1";
+		B1<=x"1";
+		wait for 6 ps;
+		A1<=x"0";
+		B1<=x"0";
+		wait;
+	end process;
+		
+	process
+	begin
+		wait for 2 ps;
+		A2<=x"0";
+		B2<=x"0";
+		wait for 4 ps;
+		A2<=x"1";
+		B2<=x"1";
+		wait for 6 ps;
+		A2<=x"1";
+		B2<=x"1";
+		wait for 2 ps;
+	end process;
 end tb;
