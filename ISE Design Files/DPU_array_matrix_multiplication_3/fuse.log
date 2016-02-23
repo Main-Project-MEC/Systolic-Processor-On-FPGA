@@ -35,5 +35,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 25 VHDL Units
 Built simulation executable E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3_tb_isim_beh.exe
-Fuse Memory Usage: 28552 KB
-Fuse CPU Usage: 578 ms
+Fuse Memory Usage: 28576 KB
+Fuse CPU Usage: 562 ms

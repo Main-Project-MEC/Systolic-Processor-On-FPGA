@@ -461,9 +461,6 @@ LAB12:    xsi_set_current_line(105, ng0);
     memcpy(t9, t2, 4U);
     xsi_driver_first_trans_fast(t5);
     xsi_set_current_line(107, ng0);
-    t3 = (2 * 1LL);
-    t2 = (t0 + 5552);
-    xsi_process_wait(t2, t3);
 
 LAB18:    *((char **)t1) = &&LAB19;
     goto LAB1;
