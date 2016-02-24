@@ -71,9 +71,15 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
 	process
 	begin
 		wait for 2 ps;
-		A0<=x"1"; 
-		B0<=x"1";	
-		wait for 6 ps;
+		A0<=x"0"; 
+		B0<=x"0";
+		wait for 2 ps;
+		A0<=x"0"; 
+		B0<=x"0";
+		wait for 2 ps;
+		A0<=x"0"; 
+		B0<=x"0";
+		wait for 2 ps;
 		A0<=x"0";
 		B0<=x"0";
 		wait;
@@ -85,9 +91,15 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
 		A1<=x"0";
 		B1<=x"0";
 		wait for 2 ps;
-		A1<=x"1";
-		B1<=x"1";
-		wait for 6 ps;
+		A1<=x"0";
+		B1<=x"0";
+		wait for 2 ps;
+		A1<=x"0";
+		B1<=x"0";
+		wait for 2 ps;
+		A1<=x"0";
+		B1<=x"0";
+		wait for 2 ps;
 		A1<=x"0";
 		B1<=x"0";
 		wait;
@@ -99,9 +111,15 @@ architecture tb OF DPU_array_matrix_multiplication_3_tb is
 		A2<=x"0";
 		B2<=x"0";
 		wait for 4 ps;
-		A2<=x"1";
-		B2<=x"1";
-		wait for 6 ps;
+		A2<=x"0";
+		B2<=x"0";
+		wait for 2 ps;
+		A2<=x"0";
+		B2<=x"0";
+		wait for 2 ps;
+		A2<=x"0";
+		B2<=x"0";
+		wait for 2 ps;
 		A2<=x"0";
 		B2<=x"0";
 		wait;
