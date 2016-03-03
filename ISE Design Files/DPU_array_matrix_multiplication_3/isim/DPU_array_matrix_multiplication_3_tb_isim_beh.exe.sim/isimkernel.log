@@ -2,14 +2,14 @@ Command line:
    DPU_array_matrix_multiplication_3_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  58205
+     -socket  50025
 
-Tue Feb 23 23:05:19 2016
+Thu Feb 25 15:10:06 2016
 
 
  Elaboration Time: 0.078125 sec
 
- Current Memory Usage: 374.096 Meg
+ Current Memory Usage: 374.039 Meg
 
  Total Signals          : 4663
  Total Nets             : 1790
@@ -23,7 +23,7 @@ Total Line Count : 2120
 
  Total Simulation Time: 18.9063 sec
 
- Current Memory Usage: 688.685 Meg
+ Current Memory Usage: 374.039 Meg
 
-Tue Feb 23 23:06:38 2016
+Thu Feb 25 15:16:03 2016
 

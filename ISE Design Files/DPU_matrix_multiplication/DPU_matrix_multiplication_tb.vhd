@@ -49,7 +49,14 @@ begin
 --		CLK <= '1';
 --		wait for CLK_period/2;
 --   end process;
- 
+	process
+	begin
+		clear<='1';
+		CLK<='0'; wait for 1 ps;
+		CLK<='1'; wait for 1 ps;
+	end process;
+	
+	
 	process
 	begin
 		clear<='1';

@@ -97,6 +97,10 @@
     <transform xil_pn:end_ts="1456168679" xil_pn:in_ck="-6685881491659467393" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456168679">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../DFF_PC/DFF_PC.vhd"/>
       <outfile xil_pn:name="../FA/FA.vhd"/>
       <outfile xil_pn:name="../FA10/FA10.vhd"/>
@@ -124,6 +128,11 @@
     <transform xil_pn:end_ts="1456168679" xil_pn:in_ck="-6685881491659467393" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456168679">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../DFF_PC/DFF_PC.vhd"/>
       <outfile xil_pn:name="../FA/FA.vhd"/>
       <outfile xil_pn:name="../FA10/FA10.vhd"/>
@@ -139,7 +148,10 @@
     <transform xil_pn:end_ts="1456168682" xil_pn:in_ck="-6685881491659467393" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3771395911154331027" xil_pn:start_ts="1456168679">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="DPU_matrix_multiplication_tb_beh.prj"/>
       <outfile xil_pn:name="DPU_matrix_multiplication_tb_isim_beh.exe"/>
@@ -151,6 +163,7 @@
     <transform xil_pn:end_ts="1456223232" xil_pn:in_ck="5697552026652578766" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8888543092127835450" xil_pn:start_ts="1456223232">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="DPU_matrix_multiplication_tb_isim_beh.wdb"/>

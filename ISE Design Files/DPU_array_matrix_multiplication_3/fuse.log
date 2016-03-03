@@ -32,7 +32,8 @@ Compiling architecture dpu_matrix_multiplication_arch of entity DPU_matrix_multi
 Compiling architecture dpu_array_matrix_multiplication_3_arch of entity DPU_array_matrix_multiplication_3 [dpu_array_matrix_multiplication_...]
 Compiling architecture tb of entity dpu_array_matrix_multiplication_...
 Time Resolution for simulation is 1ps.
+Waiting for 6 sub-compilation(s) to finish...
 Compiled 25 VHDL Units
 Built simulation executable E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3_tb_isim_beh.exe
-Fuse Memory Usage: 28576 KB
-Fuse CPU Usage: 624 ms
+Fuse Memory Usage: 28572 KB
+Fuse CPU Usage: 467 ms
