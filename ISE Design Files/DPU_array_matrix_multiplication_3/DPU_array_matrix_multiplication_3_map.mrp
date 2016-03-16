@@ -10,7 +10,7 @@ Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 23 16:11:14 2016
+Mapped Date    : Fri Mar 11 15:49:21 2016
 ERROR:Pack:18 - The design is too large for the given device and package. 
    Please check the Design Summary section to see which resource requirement for
    your design exceeds the resources available in the device.
@@ -43,7 +43,7 @@ Logic Distribution:
 Average Fanout of Non-Clock Nets:                3.47
 
 Peak Memory Usage:  240 MB
-Total REAL time to MAP completion:  1 secs 
+Total REAL time to MAP completion:  4 secs 
 Total CPU time to MAP completion:   1 secs 
 
 NOTES:

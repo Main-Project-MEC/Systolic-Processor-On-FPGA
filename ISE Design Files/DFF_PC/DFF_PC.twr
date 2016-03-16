@@ -2,12 +2,12 @@
 Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
 -n 3 -fastpaths -xml DFF_PC.twx DFF_PC.ncd -o DFF_PC.twr DFF_PC.pcf
 
 Design file:              DFF_PC.ncd
 Physical constraint file: DFF_PC.pcf
-Device,package,speed:     xc3s400,tq144,-4 (PRODUCTION 1.39 2013-10-13)
+Device,package,speed:     xc3s400,pq208,-5 (PRODUCTION 1.39 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -44,9 +44,9 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-D           |   -0.170(R)|    1.581(R)|CLK_BUFGP         |   0.000|
-clear       |    1.766(R)|    0.111(R)|CLK_BUFGP         |   0.000|
-preset      |    1.649(R)|    0.205(R)|CLK_BUFGP         |   0.000|
+D           |   -0.142(R)|    1.369(R)|CLK_BUFGP         |   0.000|
+clear       |    1.462(R)|    0.156(R)|CLK_BUFGP         |   0.000|
+preset      |    1.702(R)|   -0.036(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -54,12 +54,12 @@ Clock CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Q           |    7.382(R)|CLK_BUFGP         |   0.000|
-Qnot        |    7.382(R)|CLK_BUFGP         |   0.000|
+Q           |    6.424(R)|CLK_BUFGP         |   0.000|
+Qnot        |    6.424(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 
-Analysis completed Sun Feb 21 16:45:04 2016 
+Analysis completed Tue Mar 15 09:56:13 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

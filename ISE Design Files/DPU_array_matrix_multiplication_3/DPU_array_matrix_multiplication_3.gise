@@ -69,21 +69,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456392814" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456392814">
+    <transform xil_pn:end_ts="1457691580" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1457691580">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../DFF_PC/DFF_PC.vhd"/>
-      <outfile xil_pn:name="../DPU_matrix_multiplication/DPU_matrix_multiplication.vhd"/>
-      <outfile xil_pn:name="../FA/FA.vhd"/>
-      <outfile xil_pn:name="../FA10/FA10.vhd"/>
-      <outfile xil_pn:name="../FAM/FAM.vhd"/>
-      <outfile xil_pn:name="../HA/HA.vhd"/>
-      <outfile xil_pn:name="../HAM/HAM.vhd"/>
-      <outfile xil_pn:name="../MAC4/MAC4.vhd"/>
-      <outfile xil_pn:name="../PIPO10/PIPO10.vhd"/>
-      <outfile xil_pn:name="../PIPO4/PIPO4.vhd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.vhd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1456224217" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1746555421838403083" xil_pn:start_ts="1456224217">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -97,42 +90,36 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456392822" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456392822">
+    <transform xil_pn:end_ts="1457691580" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1457691580">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../DFF_PC/DFF_PC.vhd"/>
-      <outfile xil_pn:name="../DPU_matrix_multiplication/DPU_matrix_multiplication.vhd"/>
-      <outfile xil_pn:name="../FA/FA.vhd"/>
-      <outfile xil_pn:name="../FA10/FA10.vhd"/>
-      <outfile xil_pn:name="../FAM/FAM.vhd"/>
-      <outfile xil_pn:name="../HA/HA.vhd"/>
-      <outfile xil_pn:name="../HAM/HAM.vhd"/>
-      <outfile xil_pn:name="../MAC4/MAC4.vhd"/>
-      <outfile xil_pn:name="../PIPO10/PIPO10.vhd"/>
-      <outfile xil_pn:name="../PIPO4/PIPO4.vhd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.vhd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1456392831" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7258297070209653069" xil_pn:start_ts="1456392822">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb_beh.prj"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1456393204" xil_pn:in_ck="-140908885622888130" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3578487090629149978" xil_pn:start_ts="1456393204">
+    <transform xil_pn:end_ts="1457691594" xil_pn:in_ck="3104782546755339293" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7258297070209653069" xil_pn:start_ts="1457691580">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1457691594" xil_pn:in_ck="-140908885622888130" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3578487090629149978" xil_pn:start_ts="1457691594">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1455823241" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1455823241">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -166,21 +153,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.lso"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.ngc"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.ngr"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.prj"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.stx"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.syr"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.xst"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_tb_stx_beh.prj"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_vhdl.prj"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1455823246" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="8440058478843383020" xil_pn:start_ts="1455823246">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -189,24 +167,20 @@
     <transform xil_pn:end_ts="1456224056" xil_pn:in_ck="-3541194604469625952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8828874161648500680" xil_pn:start_ts="1456224048">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.bld"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.ngd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_ngdbuild.xrpt"/>
-      <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1456224077" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1456224073">
+    <transform xil_pn:end_ts="1457691568" xil_pn:in_ck="-3541194604469625951" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="5157644679949784513" xil_pn:start_ts="1457691559">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3.pcf"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_map.map"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_map.mrp"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_map.ncd"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_map.ngm"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_map.xrpt"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_summary.xml"/>
-      <outfile xil_pn:name="DPU_array_matrix_multiplication_3_usage.xml"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
   </transforms>
 

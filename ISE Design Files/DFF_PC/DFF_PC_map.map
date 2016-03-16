@@ -3,13 +3,13 @@ Xilinx Map Application Log File for Design 'DFF_PC'
 
 Design Information
 ------------------
-Command Line   : map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off
+Command Line   : map -intstyle ise -p xc3s400-pq208-5 -cm area -ir off -pr off
 -c 100 -o DFF_PC_map.ncd DFF_PC.ngd DFF_PC.pcf 
 Target Device  : xc3s400
-Target Package : tq144
-Target Speed   : -4
+Target Package : pq208
+Target Speed   : -5
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Sun Feb 21 16:44:41 2016
+Mapped Date    : Tue Mar 15 09:55:55 2016
 
 Mapping design into LUTs...
 Running directed packing...
@@ -31,14 +31,14 @@ Logic Distribution:
     Number of Slices containing unrelated logic:          0 out of       1   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
   Total Number of 4 input LUTs:           1 out of   7,168    1%
-  Number of bonded IOBs:                  6 out of      97    6%
+  Number of bonded IOBs:                  6 out of     141    4%
     IOB Flip Flops:                       2
   Number of BUFGMUXs:                     1 out of       8   12%
 
 Average Fanout of Non-Clock Nets:                1.25
 
 Peak Memory Usage:  236 MB
-Total REAL time to MAP completion:  9 secs 
+Total REAL time to MAP completion:  3 secs 
 Total CPU time to MAP completion:   1 secs 
 
 NOTES:
