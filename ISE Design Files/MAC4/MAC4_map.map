@@ -3,13 +3,14 @@ Xilinx Map Application Log File for Design 'MAC4'
 
 Design Information
 ------------------
-Command Line   : map -intstyle ise -p xc3s400-tq144-4 -cm area -ir off -pr off
--c 100 -o MAC4_map.ncd MAC4.ngd MAC4.pcf 
+Command Line   : map -filter "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE
+Design Files/MAC4/iseconfig/filter.filter" -intstyle ise -p xc3s400-tq144-4 -cm
+area -ir off -pr off -c 100 -o MAC4_map.ncd MAC4.ngd MAC4.pcf 
 Target Device  : xc3s400
 Target Package : tq144
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Thu Feb 11 00:17:59 2016
+Mapped Date    : Fri Apr 15 14:31:19 2016
 
 Mapping design into LUTs...
 Running directed packing...
@@ -36,8 +37,8 @@ Logic Distribution:
 Average Fanout of Non-Clock Nets:                3.03
 
 Peak Memory Usage:  240 MB
-Total REAL time to MAP completion:  0 secs 
-Total CPU time to MAP completion:   0 secs 
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion:   1 secs 
 
 NOTES:
 

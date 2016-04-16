@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Reading design: DPU_array_matrix_multiplication_3.prj
 
@@ -125,8 +125,7 @@ Architecture pipo10_arch of Entity pipo10 is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_matrix_multiplication/DPU_matrix_multiplication.vhd" in Library work.
 Architecture dpu_matrix_multiplication_arch of Entity dpu_matrix_multiplication is up to date.
 Compiling vhdl file "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd" in Library work.
-Entity <dpu_array_matrix_multiplication_3> compiled.
-Entity <dpu_array_matrix_multiplication_3> (Architecture <dpu_array_matrix_multiplication_3_arch>) compiled.
+Architecture dpu_array_matrix_multiplication_3_arch of Entity dpu_array_matrix_multiplication_3 is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -595,11 +594,11 @@ Offset:              7.367ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.10 secs
+Total CPU time to Xst completion: 10.41 secs
  
 --> 
 
-Total memory usage is 266860 kilobytes
+Total memory usage is 266832 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  106 (   0 filtered)

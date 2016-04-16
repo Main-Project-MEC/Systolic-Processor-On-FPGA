@@ -1,0 +1,2021 @@
+IN_RX_DATA	= 0
+IN_STATUS	= 1
+IN_TEMPERAT	= 2
+IN_DIP_SWITCH	= 3
+IN_CLK_CTR_LOW	= 5
+IN_CLK_CTR_HIGH	= 6
+MEMTOP	= 8192
+OUT_TX_DATA	= 0
+OUT_LEDS	= 2
+OUT_INT_MASK	= 3
+OUT_RESET_TIMER	= 4
+OUT_START_CLK_CTR	= 5
+OUT_STOP_CLK_CTR	= 6
+
+   0000: F8 2000    MOVE #MEMTOP, RR
+   0003: 4F         MOVE RR, SP
+   0004: 77         EI 
+   0005: 02 089D    JMP Cmain
+   0008: 02 00E4    JMP Cinterrupt
+mult_div:
+   000B: 74         MD_STP 
+   000C: 74         MD_STP 
+   000D: 74         MD_STP 
+   000E: 74         MD_STP 
+   000F: 74         MD_STP 
+   0010: 74         MD_STP 
+   0011: 74         MD_STP 
+   0012: 74         MD_STP 
+   0013: 74         MD_STP 
+   0014: 74         MD_STP 
+   0015: 74         MD_STP 
+   0016: 74         MD_STP 
+   0017: 74         MD_STP 
+   0018: 74         MD_STP 
+   0019: 74         MD_STP 
+   001A: 74         MD_STP 
+   001B: 07         RET 
+Cserial_in_buffer:
+   001C: 00         .BYTE 0
+   001D: 00         .BYTE 0
+   001E: 00         .BYTE 0
+   001F: 00         .BYTE 0
+   0020: 00         .BYTE 0
+   0021: 00         .BYTE 0
+   0022: 00         .BYTE 0
+   0023: 00         .BYTE 0
+   0024: 00         .BYTE 0
+   0025: 00         .BYTE 0
+   0026: 00         .BYTE 0
+   0027: 00         .BYTE 0
+   0028: 00         .BYTE 0
+   0029: 00         .BYTE 0
+   002A: 00         .BYTE 0
+   002B: 00         .BYTE 0
+Cserial_in_get:
+   002C: 00         .BYTE 0
+Cserial_in_put:
+   002D: 00         .BYTE 0
+Cserial_in_length:
+   002E: 00         .BYTE 0
+Cserial_in_overflow:
+   002F: 00         .BYTE 0
+Crx_interrupt:
+   0030: 2E 00      IN (IN_RX_DATA), RU
+   0032: 0F         MOVE R, -(SP)
+   0033: 4B 002E    MOVE (Cserial_in_length), RU
+   0036: 29 10      SLO RR, #16
+   0038: 04 005D    JMP RRZ, L2_else_1
+   003B: 63 00      MOVE 0(SP), RS
+   003D: 0F         MOVE R, -(SP)
+   003E: 4B 002D    MOVE (Cserial_in_put), RU
+   0041: F4 001C    ADD RR, #Cserial_in_buffer
+   0044: 43         MOVE RR, LL
+   0045: 0A         MOVE (SP)+, RU
+   0046: 45         MOVE R, (LL)
+   0047: 4B 002D    MOVE (Cserial_in_put), RU
+   004A: A1         ADD RR, #1
+   004B: 5B 002D    MOVE R, (Cserial_in_put)
+   004E: 11 0F      AND RR, #15
+   0050: 5B 002D    MOVE R, (Cserial_in_put)
+   0053: 4B 002E    MOVE (Cserial_in_length), RU
+   0056: A1         ADD RR, #1
+   0057: 5B 002E    MOVE R, (Cserial_in_length)
+   005A: 02 0063    JMP L2_endif_1
+L2_else_1:
+   005D: F8 00FF    MOVE #255, RR
+   0060: 5B 002F    MOVE R, (Cserial_in_overflow)
+L2_endif_1:
+L2_return:
+   0063: 2B 01      ADD SP, #1
+   0065: 07         RET 
+Cserial_out_buffer:
+   0066: 00         .BYTE 0
+   0067: 00         .BYTE 0
+   0068: 00         .BYTE 0
+   0069: 00         .BYTE 0
+   006A: 00         .BYTE 0
+   006B: 00         .BYTE 0
+   006C: 00         .BYTE 0
+   006D: 00         .BYTE 0
+   006E: 00         .BYTE 0
+   006F: 00         .BYTE 0
+   0070: 00         .BYTE 0
+   0071: 00         .BYTE 0
+   0072: 00         .BYTE 0
+   0073: 00         .BYTE 0
+   0074: 00         .BYTE 0
+   0075: 00         .BYTE 0
+Cserial_out_get:
+   0076: 00         .BYTE 0
+Cserial_out_put:
+   0077: 00         .BYTE 0
+Cserial_out_length:
+   0078: 00         .BYTE 0
+Ctx_interrupt:
+   0079: 4B 0078    MOVE (Cserial_out_length), RU
+   007C: 04 009E    JMP RRZ, L3_else_2
+   007F: 4B 0076    MOVE (Cserial_out_get), RU
+   0082: F4 0066    ADD RR, #Cserial_out_buffer
+   0085: 48         MOVE (RR), RU
+   0086: 2F 00      OUT R, (OUT_TX_DATA)
+   0088: 4B 0076    MOVE (Cserial_out_get), RU
+   008B: A1         ADD RR, #1
+   008C: 5B 0076    MOVE R, (Cserial_out_get)
+   008F: 11 0F      AND RR, #15
+   0091: 5B 0076    MOVE R, (Cserial_out_get)
+   0094: 4B 0078    MOVE (Cserial_out_length), RU
+   0097: B1         SUB RR, #1
+   0098: 5B 0078    MOVE R, (Cserial_out_length)
+   009B: 02 00A1    JMP L3_endif_2
+L3_else_2:
+   009E: C5         MOVE #5, RR
+   009F: 2F 03      OUT R, (OUT_INT_MASK)
+L3_endif_2:
+L3_return:
+   00A1: 07         RET 
+Cmilliseconds:
+   00A2: 0000       .WORD 0
+Cseconds_low:
+   00A4: 0000       .WORD 0
+Cseconds_mid:
+   00A6: 0000       .WORD 0
+Cseconds_high:
+   00A8: 0000       .WORD 0
+Cseconds_changed:
+   00AA: 00         .BYTE 0
+Ctimer_interrupt:
+   00AB: 2F 04      OUT R, (OUT_RESET_TIMER)
+   00AD: 49 00A2    MOVE (Cmilliseconds), RR
+   00B0: A1         ADD RR, #1
+   00B1: 5A 00A2    MOVE RR, (Cmilliseconds)
+   00B4: 16 03E8    SEQ RR, #1000
+   00B7: 04 00E3    JMP RRZ, L4_endif_3
+   00BA: C0         MOVE #0, RR
+   00BB: 5A 00A2    MOVE RR, (Cmilliseconds)
+   00BE: F8 00FF    MOVE #255, RR
+   00C1: 5B 00AA    MOVE R, (Cseconds_changed)
+   00C4: 49 00A4    MOVE (Cseconds_low), RR
+   00C7: A1         ADD RR, #1
+   00C8: 5A 00A4    MOVE RR, (Cseconds_low)
+   00CB: 17 00      SEQ RR, #0
+   00CD: 04 00E3    JMP RRZ, L4_endif_4
+   00D0: 49 00A6    MOVE (Cseconds_mid), RR
+   00D3: A1         ADD RR, #1
+   00D4: 5A 00A6    MOVE RR, (Cseconds_mid)
+   00D7: 17 00      SEQ RR, #0
+   00D9: 04 00E3    JMP RRZ, L4_endif_5
+   00DC: 49 00A8    MOVE (Cseconds_high), RR
+   00DF: A1         ADD RR, #1
+   00E0: 5A 00A8    MOVE RR, (Cseconds_high)
+L4_endif_5:
+L4_endif_4:
+L4_endif_3:
+L4_return:
+   00E3: 07         RET 
+Cinterrupt:
+   00E4: 0E         MOVE RR, -(SP)
+   00E5: 40         MOVE LL, RR
+   00E6: 0E         MOVE RR, -(SP)
+   00E7: 2E 01      IN (IN_STATUS), RU
+   00E9: 11 10      AND RR, #16
+   00EB: 04 00F1    JMP RRZ, L5_endif_6
+   00EE: 05 0030    CALL Crx_interrupt
+L5_endif_6:
+   00F1: 2E 01      IN (IN_STATUS), RU
+   00F3: 11 20      AND RR, #32
+   00F5: 04 00FB    JMP RRZ, L5_endif_7
+   00F8: 05 0079    CALL Ctx_interrupt
+L5_endif_7:
+   00FB: 2E 01      IN (IN_STATUS), RU
+   00FD: 11 40      AND RR, #64
+   00FF: 04 0105    JMP RRZ, L5_endif_8
+   0102: 05 00AB    CALL Ctimer_interrupt
+L5_endif_8:
+   0105: 08         MOVE (SP)+, RR
+   0106: 43         MOVE RR, LL
+   0107: 08         MOVE (SP)+, RR
+   0108: 78         RETI 
+L5_return:
+   0109: 07         RET 
+Cstrlen:
+   010A: 61 02      MOVE 2(SP), RR
+   010C: 0E         MOVE RR, -(SP)
+   010D: 02 0116    JMP L6_cont_9
+L6_loop_9:
+   0110: 61 04      MOVE 4(SP), RR
+   0112: A1         ADD RR, #1
+   0113: 5D 04      MOVE RR, 4(SP)
+   0115: B1         SUB RR, #1
+L6_cont_9:
+   0116: 61 04      MOVE 4(SP), RR
+   0118: 47         MOVE (RR), RS
+   0119: 03 0110    JMP RRNZ, L6_loop_9
+L6_brk_10:
+   011C: 61 04      MOVE 4(SP), RR
+   011E: 43         MOVE RR, LL
+   011F: 61 00      MOVE 0(SP), RR
+   0121: 59         SUB LL, RR
+   0122: 02 0125    JMP L6_return
+L6_return:
+   0125: 2B 02      ADD SP, #2
+   0127: 07         RET 
+Cputchr:
+L7_loop_11:
+L7_cont_11:
+   0128: 4B 0078    MOVE (Cserial_out_length), RU
+   012B: 17 10      SEQ RR, #16
+   012D: 03 0128    JMP RRNZ, L7_loop_11
+L7_brk_12:
+   0130: 63 02      MOVE 2(SP), RS
+   0132: 0F         MOVE R, -(SP)
+   0133: 4B 0077    MOVE (Cserial_out_put), RU
+   0136: F4 0066    ADD RR, #Cserial_out_buffer
+   0139: 43         MOVE RR, LL
+   013A: 0A         MOVE (SP)+, RU
+   013B: 45         MOVE R, (LL)
+   013C: 4B 0077    MOVE (Cserial_out_put), RU
+   013F: A1         ADD RR, #1
+   0140: 5B 0077    MOVE R, (Cserial_out_put)
+   0143: 11 0F      AND RR, #15
+   0145: 5B 0077    MOVE R, (Cserial_out_put)
+   0148: 79         DI 
+   0149: 4B 0078    MOVE (Cserial_out_length), RU
+   014C: A1         ADD RR, #1
+   014D: 5B 0078    MOVE R, (Cserial_out_length)
+   0150: 77         EI 
+   0151: C7         MOVE #7, RR
+   0152: 2F 03      OUT R, (OUT_INT_MASK)
+   0154: C1         MOVE #1, RR
+L7_return:
+   0155: 07         RET 
+Cprint_string:
+   0156: 02 0166    JMP L8_cont_13
+L8_loop_13:
+   0159: 61 02      MOVE 2(SP), RR
+   015B: A1         ADD RR, #1
+   015C: 5D 02      MOVE RR, 2(SP)
+   015E: B1         SUB RR, #1
+   015F: 47         MOVE (RR), RS
+   0160: 0F         MOVE R, -(SP)
+   0161: 05 0128    CALL Cputchr
+   0164: 2B 01      ADD SP, #1
+L8_cont_13:
+   0166: 61 02      MOVE 2(SP), RR
+   0168: 47         MOVE (RR), RS
+   0169: 03 0159    JMP RRNZ, L8_loop_13
+L8_brk_14:
+L8_return:
+   016C: 07         RET 
+Cprint_hex:
+   016D: 61 04      MOVE 4(SP), RR
+   016F: 22 1000    SHS RR, #4096
+   0172: 04 018B    JMP RRZ, L9_endif_15
+   0175: 61 04      MOVE 4(SP), RR
+   0177: 53 0C      ASR RR, #12
+   0179: 11 0F      AND RR, #15
+   017B: 0E         MOVE RR, -(SP)
+   017C: 61 08      MOVE 8(SP), RR
+   017E: 0B         MOVE (SP)+, LL
+   017F: 58         ADD LL, RR
+   0180: 47         MOVE (RR), RS
+   0181: 0F         MOVE R, -(SP)
+   0182: 61 03      MOVE 3(SP), RR
+   0184: A1         ADD RR, #1
+   0185: 5D 03      MOVE RR, 3(SP)
+   0187: B1         SUB RR, #1
+   0188: 43         MOVE RR, LL
+   0189: 09         MOVE (SP)+, RS
+   018A: 45         MOVE R, (LL)
+L9_endif_15:
+   018B: 61 04      MOVE 4(SP), RR
+   018D: 22 0100    SHS RR, #256
+   0190: 04 01A9    JMP RRZ, L9_endif_16
+   0193: 61 04      MOVE 4(SP), RR
+   0195: 53 08      ASR RR, #8
+   0197: 11 0F      AND RR, #15
+   0199: 0E         MOVE RR, -(SP)
+   019A: 61 08      MOVE 8(SP), RR
+   019C: 0B         MOVE (SP)+, LL
+   019D: 58         ADD LL, RR
+   019E: 47         MOVE (RR), RS
+   019F: 0F         MOVE R, -(SP)
+   01A0: 61 03      MOVE 3(SP), RR
+   01A2: A1         ADD RR, #1
+   01A3: 5D 03      MOVE RR, 3(SP)
+   01A5: B1         SUB RR, #1
+   01A6: 43         MOVE RR, LL
+   01A7: 09         MOVE (SP)+, RS
+   01A8: 45         MOVE R, (LL)
+L9_endif_16:
+   01A9: 61 04      MOVE 4(SP), RR
+   01AB: 23 10      SHS RR, #16
+   01AD: 04 01C6    JMP RRZ, L9_endif_17
+   01B0: 61 04      MOVE 4(SP), RR
+   01B2: 53 04      ASR RR, #4
+   01B4: 11 0F      AND RR, #15
+   01B6: 0E         MOVE RR, -(SP)
+   01B7: 61 08      MOVE 8(SP), RR
+   01B9: 0B         MOVE (SP)+, LL
+   01BA: 58         ADD LL, RR
+   01BB: 47         MOVE (RR), RS
+   01BC: 0F         MOVE R, -(SP)
+   01BD: 61 03      MOVE 3(SP), RR
+   01BF: A1         ADD RR, #1
+   01C0: 5D 03      MOVE RR, 3(SP)
+   01C2: B1         SUB RR, #1
+   01C3: 43         MOVE RR, LL
+   01C4: 09         MOVE (SP)+, RS
+   01C5: 45         MOVE R, (LL)
+L9_endif_17:
+   01C6: 61 04      MOVE 4(SP), RR
+   01C8: 11 0F      AND RR, #15
+   01CA: 0E         MOVE RR, -(SP)
+   01CB: 61 08      MOVE 8(SP), RR
+   01CD: 0B         MOVE (SP)+, LL
+   01CE: 58         ADD LL, RR
+   01CF: 47         MOVE (RR), RS
+   01D0: 0F         MOVE R, -(SP)
+   01D1: 61 03      MOVE 3(SP), RR
+   01D3: A1         ADD RR, #1
+   01D4: 5D 03      MOVE RR, 3(SP)
+   01D6: B1         SUB RR, #1
+   01D7: 43         MOVE RR, LL
+   01D8: 09         MOVE (SP)+, RS
+   01D9: 45         MOVE R, (LL)
+   01DA: C0         MOVE #0, RR
+   01DB: 0F         MOVE R, -(SP)
+   01DC: 61 03      MOVE 3(SP), RR
+   01DE: 43         MOVE RR, LL
+   01DF: 09         MOVE (SP)+, RS
+   01E0: 45         MOVE R, (LL)
+L9_return:
+   01E1: 07         RET 
+Cprint_unsigned:
+   01E2: 61 04      MOVE 4(SP), RR
+   01E4: 22 2710    SHS RR, #10000
+   01E7: 04 0212    JMP RRZ, L10_endif_18
+   01EA: 61 04      MOVE 4(SP), RR
+   01EC: 43         MOVE RR, LL
+   01ED: F8 2710    MOVE #10000, RR
+   01F0: 79         DI 
+   01F1: 73         DIV_IU 
+   01F2: 05 000B    CALL mult_div
+   01F5: 75         MD_FIN 
+   01F6: 77         EI 
+   01F7: F5 30      ADD RR, #48
+   01F9: 0F         MOVE R, -(SP)
+   01FA: 61 03      MOVE 3(SP), RR
+   01FC: A1         ADD RR, #1
+   01FD: 5D 03      MOVE RR, 3(SP)
+   01FF: B1         SUB RR, #1
+   0200: 43         MOVE RR, LL
+   0201: 09         MOVE (SP)+, RS
+   0202: 45         MOVE R, (LL)
+   0203: 61 04      MOVE 4(SP), RR
+   0205: 43         MOVE RR, LL
+   0206: F8 2710    MOVE #10000, RR
+   0209: 79         DI 
+   020A: 73         DIV_IU 
+   020B: 05 000B    CALL mult_div
+   020E: 76         MOD_FIN 
+   020F: 77         EI 
+   0210: 5D 04      MOVE RR, 4(SP)
+L10_endif_18:
+   0212: 61 04      MOVE 4(SP), RR
+   0214: 22 03E8    SHS RR, #1000
+   0217: 04 0242    JMP RRZ, L10_endif_19
+   021A: 61 04      MOVE 4(SP), RR
+   021C: 43         MOVE RR, LL
+   021D: F8 03E8    MOVE #1000, RR
+   0220: 79         DI 
+   0221: 73         DIV_IU 
+   0222: 05 000B    CALL mult_div
+   0225: 75         MD_FIN 
+   0226: 77         EI 
+   0227: F5 30      ADD RR, #48
+   0229: 0F         MOVE R, -(SP)
+   022A: 61 03      MOVE 3(SP), RR
+   022C: A1         ADD RR, #1
+   022D: 5D 03      MOVE RR, 3(SP)
+   022F: B1         SUB RR, #1
+   0230: 43         MOVE RR, LL
+   0231: 09         MOVE (SP)+, RS
+   0232: 45         MOVE R, (LL)
+   0233: 61 04      MOVE 4(SP), RR
+   0235: 43         MOVE RR, LL
+   0236: F8 03E8    MOVE #1000, RR
+   0239: 79         DI 
+   023A: 73         DIV_IU 
+   023B: 05 000B    CALL mult_div
+   023E: 76         MOD_FIN 
+   023F: 77         EI 
+   0240: 5D 04      MOVE RR, 4(SP)
+L10_endif_19:
+   0242: 61 04      MOVE 4(SP), RR
+   0244: 23 64      SHS RR, #100
+   0246: 04 026F    JMP RRZ, L10_endif_20
+   0249: 61 04      MOVE 4(SP), RR
+   024B: 43         MOVE RR, LL
+   024C: F9 64      MOVE #100, RR
+   024E: 79         DI 
+   024F: 73         DIV_IU 
+   0250: 05 000B    CALL mult_div
+   0253: 75         MD_FIN 
+   0254: 77         EI 
+   0255: F5 30      ADD RR, #48
+   0257: 0F         MOVE R, -(SP)
+   0258: 61 03      MOVE 3(SP), RR
+   025A: A1         ADD RR, #1
+   025B: 5D 03      MOVE RR, 3(SP)
+   025D: B1         SUB RR, #1
+   025E: 43         MOVE RR, LL
+   025F: 09         MOVE (SP)+, RS
+   0260: 45         MOVE R, (LL)
+   0261: 61 04      MOVE 4(SP), RR
+   0263: 43         MOVE RR, LL
+   0264: F9 64      MOVE #100, RR
+   0266: 79         DI 
+   0267: 73         DIV_IU 
+   0268: 05 000B    CALL mult_div
+   026B: 76         MOD_FIN 
+   026C: 77         EI 
+   026D: 5D 04      MOVE RR, 4(SP)
+L10_endif_20:
+   026F: 61 04      MOVE 4(SP), RR
+   0271: 23 0A      SHS RR, #10
+   0273: 04 029C    JMP RRZ, L10_endif_21
+   0276: 61 04      MOVE 4(SP), RR
+   0278: 43         MOVE RR, LL
+   0279: F9 0A      MOVE #10, RR
+   027B: 79         DI 
+   027C: 73         DIV_IU 
+   027D: 05 000B    CALL mult_div
+   0280: 75         MD_FIN 
+   0281: 77         EI 
+   0282: F5 30      ADD RR, #48
+   0284: 0F         MOVE R, -(SP)
+   0285: 61 03      MOVE 3(SP), RR
+   0287: A1         ADD RR, #1
+   0288: 5D 03      MOVE RR, 3(SP)
+   028A: B1         SUB RR, #1
+   028B: 43         MOVE RR, LL
+   028C: 09         MOVE (SP)+, RS
+   028D: 45         MOVE R, (LL)
+   028E: 61 04      MOVE 4(SP), RR
+   0290: 43         MOVE RR, LL
+   0291: F9 0A      MOVE #10, RR
+   0293: 79         DI 
+   0294: 73         DIV_IU 
+   0295: 05 000B    CALL mult_div
+   0298: 76         MOD_FIN 
+   0299: 77         EI 
+   029A: 5D 04      MOVE RR, 4(SP)
+L10_endif_21:
+   029C: 61 04      MOVE 4(SP), RR
+   029E: F5 30      ADD RR, #48
+   02A0: 0F         MOVE R, -(SP)
+   02A1: 61 03      MOVE 3(SP), RR
+   02A3: A1         ADD RR, #1
+   02A4: 5D 03      MOVE RR, 3(SP)
+   02A6: B1         SUB RR, #1
+   02A7: 43         MOVE RR, LL
+   02A8: 09         MOVE (SP)+, RS
+   02A9: 45         MOVE R, (LL)
+   02AA: C0         MOVE #0, RR
+   02AB: 0F         MOVE R, -(SP)
+   02AC: 61 03      MOVE 3(SP), RR
+   02AE: 43         MOVE RR, LL
+   02AF: 09         MOVE (SP)+, RS
+   02B0: 45         MOVE R, (LL)
+L10_return:
+   02B1: 07         RET 
+Cprint_item:
+   02B2: 2C         CLRW -(SP)
+   02B3: 2C         CLRW -(SP)
+   02B4: 2C         CLRW -(SP)
+   02B5: 2C         CLRW -(SP)
+   02B6: 61 0A      MOVE 10(SP), RR
+   02B8: 0E         MOVE RR, -(SP)
+   02B9: 05 010A    CALL Cstrlen
+   02BC: 2B 02      ADD SP, #2
+   02BE: 0E         MOVE RR, -(SP)
+   02BF: 2C         CLRW -(SP)
+   02C0: 2C         CLRW -(SP)
+   02C1: 61 19      MOVE 25(SP), RR
+   02C3: 43         MOVE RR, LL
+   02C4: 61 04      MOVE 4(SP), RR
+   02C6: 36         SGT LL, RR
+   02C7: 04 02D2    JMP RRZ, L11_endif_22
+   02CA: 61 19      MOVE 25(SP), RR
+   02CC: 43         MOVE RR, LL
+   02CD: 61 04      MOVE 4(SP), RR
+   02CF: 59         SUB LL, RR
+   02D0: 5D 06      MOVE RR, 6(SP)
+L11_endif_22:
+   02D2: 63 13      MOVE 19(SP), RS
+   02D4: 04 02DA    JMP RRZ, L11_endif_23
+   02D7: C1         MOVE #1, RR
+   02D8: 5D 0A      MOVE RR, 10(SP)
+L11_endif_23:
+   02DA: 61 15      MOVE 21(SP), RR
+   02DC: 04 02E3    JMP RRZ, L11_endif_25
+   02DF: 63 12      MOVE 18(SP), RS
+   02E1: 11 01      AND RR, #1
+L11_endif_25:
+   02E3: 04 02F0    JMP RRZ, L11_endif_24
+   02E6: 61 15      MOVE 21(SP), RR
+   02E8: 0E         MOVE RR, -(SP)
+   02E9: 05 010A    CALL Cstrlen
+   02EC: 2B 02      ADD SP, #2
+   02EE: 5D 08      MOVE RR, 8(SP)
+L11_endif_24:
+   02F0: 61 0A      MOVE 10(SP), RR
+   02F2: 43         MOVE RR, LL
+   02F3: 61 08      MOVE 8(SP), RR
+   02F5: 58         ADD LL, RR
+   02F6: 43         MOVE RR, LL
+   02F7: 61 06      MOVE 6(SP), RR
+   02F9: 58         ADD LL, RR
+   02FA: 43         MOVE RR, LL
+   02FB: 61 04      MOVE 4(SP), RR
+   02FD: 58         ADD LL, RR
+   02FE: 5D 02      MOVE RR, 2(SP)
+   0300: 63 12      MOVE 18(SP), RS
+   0302: 3F         NOT RR
+   0303: 11 02      AND RR, #2
+   0305: 04 0326    JMP RRZ, L11_endif_26
+   0308: 61 02      MOVE 2(SP), RR
+   030A: 5D 00      MOVE RR, 0(SP)
+   030C: 02 031D    JMP L11_tst_27
+L11_loop_27:
+   030F: 63 14      MOVE 20(SP), RS
+   0311: 0F         MOVE R, -(SP)
+   0312: 05 0128    CALL Cputchr
+   0315: 2B 01      ADD SP, #1
+L11_cont_27:
+   0317: 61 00      MOVE 0(SP), RR
+   0319: A1         ADD RR, #1
+   031A: 5D 00      MOVE RR, 0(SP)
+   031C: B1         SUB RR, #1
+L11_tst_27:
+   031D: 61 00      MOVE 0(SP), RR
+   031F: 43         MOVE RR, LL
+   0320: 61 17      MOVE 23(SP), RR
+   0322: 38         SLT LL, RR
+   0323: 03 030F    JMP RRNZ, L11_loop_27
+L11_brk_28:
+L11_endif_26:
+   0326: 63 13      MOVE 19(SP), RS
+   0328: 04 0333    JMP RRZ, L11_endif_29
+   032B: 63 13      MOVE 19(SP), RS
+   032D: 0F         MOVE R, -(SP)
+   032E: 05 0128    CALL Cputchr
+   0331: 2B 01      ADD SP, #1
+L11_endif_29:
+   0333: 61 15      MOVE 21(SP), RR
+   0335: 04 0347    JMP RRZ, L11_endif_30
+   0338: 63 12      MOVE 18(SP), RS
+   033A: 11 01      AND RR, #1
+   033C: 04 0347    JMP RRZ, L11_endif_31
+   033F: 61 15      MOVE 21(SP), RR
+   0341: 0E         MOVE RR, -(SP)
+   0342: 05 0156    CALL Cprint_string
+   0345: 2B 02      ADD SP, #2
+L11_endif_31:
+L11_endif_30:
+   0347: C0         MOVE #0, RR
+   0348: 5D 00      MOVE RR, 0(SP)
+   034A: 02 035B    JMP L11_tst_32
+L11_loop_32:
+   034D: 63 1B      MOVE 27(SP), RS
+   034F: 0F         MOVE R, -(SP)
+   0350: 05 0128    CALL Cputchr
+   0353: 2B 01      ADD SP, #1
+L11_cont_32:
+   0355: 61 00      MOVE 0(SP), RR
+   0357: A1         ADD RR, #1
+   0358: 5D 00      MOVE RR, 0(SP)
+   035A: B1         SUB RR, #1
+L11_tst_32:
+   035B: 61 00      MOVE 0(SP), RR
+   035D: 43         MOVE RR, LL
+   035E: 61 06      MOVE 6(SP), RR
+   0360: 38         SLT LL, RR
+   0361: 03 034D    JMP RRNZ, L11_loop_32
+L11_brk_33:
+   0364: 61 10      MOVE 16(SP), RR
+   0366: 0E         MOVE RR, -(SP)
+   0367: 05 0156    CALL Cprint_string
+   036A: 2B 02      ADD SP, #2
+   036C: 63 12      MOVE 18(SP), RS
+   036E: 11 02      AND RR, #2
+   0370: 04 0391    JMP RRZ, L11_endif_34
+   0373: 61 02      MOVE 2(SP), RR
+   0375: 5D 00      MOVE RR, 0(SP)
+   0377: 02 0388    JMP L11_tst_35
+L11_loop_35:
+   037A: 63 14      MOVE 20(SP), RS
+   037C: 0F         MOVE R, -(SP)
+   037D: 05 0128    CALL Cputchr
+   0380: 2B 01      ADD SP, #1
+L11_cont_35:
+   0382: 61 00      MOVE 0(SP), RR
+   0384: A1         ADD RR, #1
+   0385: 5D 00      MOVE RR, 0(SP)
+   0387: B1         SUB RR, #1
+L11_tst_35:
+   0388: 61 00      MOVE 0(SP), RR
+   038A: 43         MOVE RR, LL
+   038B: 61 17      MOVE 23(SP), RR
+   038D: 38         SLT LL, RR
+   038E: 03 037A    JMP RRNZ, L11_loop_35
+L11_brk_36:
+L11_endif_34:
+   0391: 61 02      MOVE 2(SP), RR
+   0393: 02 0396    JMP L11_return
+L11_return:
+   0396: 2B 0E      ADD SP, #14
+   0398: 07         RET 
+Cprintf:
+   0399: 6D 02      LEA 2(SP), RR
+   039B: A2         ADD RR, #2
+   039C: 0E         MOVE RR, -(SP)
+   039D: 2C         CLRW -(SP)
+   039E: 2D         CLRB -(SP)
+   039F: 2D         CLRB -(SP)
+   03A0: 2D         CLRB -(SP)
+   03A1: 2D         CLRB -(SP)
+   03A2: 2C         CLRW -(SP)
+   03A3: 2C         CLRW -(SP)
+   03A4: 2C         CLRW -(SP)
+   03A5: 2C         CLRW -(SP)
+   03A6: 2C         CLRW -(SP)
+   03A7: 2C         CLRW -(SP)
+   03A8: 2C         CLRW -(SP)
+   03A9: 2C         CLRW -(SP)
+   03AA: 2C         CLRW -(SP)
+   03AB: 2C         CLRW -(SP)
+   03AC: 02 06DE    JMP L12_cont_37
+L12_loop_37:
+   03AF: 63 17      MOVE 23(SP), RS
+   03B1: 19 25      SNE RR, #37
+   03B3: 04 03C6    JMP RRZ, L12_endif_39
+   03B6: 63 17      MOVE 23(SP), RS
+   03B8: 0F         MOVE R, -(SP)
+   03B9: 05 0128    CALL Cputchr
+   03BC: 2B 01      ADD SP, #1
+   03BE: 67 18      MOVE 24(SP), LL
+   03C0: 58         ADD LL, RR
+   03C1: 5D 18      MOVE RR, 24(SP)
+   03C3: 02 06DE    JMP L12_cont_37
+L12_endif_39:
+   03C6: C0         MOVE #0, RR
+   03C7: 5F 16      MOVE R, 22(SP)
+   03C9: C0         MOVE #0, RR
+   03CA: 5F 15      MOVE R, 21(SP)
+   03CC: F9 20      MOVE #32, RR
+   03CE: 5F 14      MOVE R, 20(SP)
+   03D0: C0         MOVE #0, RR
+   03D1: 5D 10      MOVE RR, 16(SP)
+   03D3: C0         MOVE #0, RR
+   03D4: 5D 0E      MOVE RR, 14(SP)
+   03D6: 6D 10      LEA 16(SP), RR
+   03D8: 5D 0C      MOVE RR, 12(SP)
+L12_loop_40:
+   03DA: 61 1E      MOVE 30(SP), RR
+   03DC: A1         ADD RR, #1
+   03DD: 5D 1E      MOVE RR, 30(SP)
+   03DF: B1         SUB RR, #1
+   03E0: 47         MOVE (RR), RS
+   03E1: 5F 17      MOVE R, 23(SP)
+   03E3: 43         MOVE RR, LL
+   03E4: FB 58      SEQ LL, #88
+   03E6: 03 0459    JMP RRNZ, L12_case_42_0058
+   03E9: FB 64      SEQ LL, #100
+   03EB: 03 0493    JMP RRNZ, L12_case_42_0064
+   03EE: FB 73      SEQ LL, #115
+   03F0: 03 04DF    JMP RRNZ, L12_case_42_0073
+   03F3: FB 75      SEQ LL, #117
+   03F5: 03 050B    JMP RRNZ, L12_case_42_0075
+   03F8: FB 78      SEQ LL, #120
+   03FA: 03 0541    JMP RRNZ, L12_case_42_0078
+   03FD: FB 63      SEQ LL, #99
+   03FF: 03 057B    JMP RRNZ, L12_case_42_0063
+   0402: FB 23      SEQ LL, #35
+   0404: 03 0590    JMP RRNZ, L12_case_42_0023
+   0407: FB 2D      SEQ LL, #45
+   0409: 03 0599    JMP RRNZ, L12_case_42_002D
+   040C: FB 20      SEQ LL, #32
+   040E: 03 05A2    JMP RRNZ, L12_case_42_0020
+   0411: FB 2B      SEQ LL, #43
+   0413: 03 05AF    JMP RRNZ, L12_case_42_002B
+   0416: FB 2E      SEQ LL, #46
+   0418: 03 05B6    JMP RRNZ, L12_case_42_002E
+   041B: FB 30      SEQ LL, #48
+   041D: 03 05BD    JMP RRNZ, L12_case_42_0030
+   0420: FB 31      SEQ LL, #49
+   0422: 03 05E0    JMP RRNZ, L12_case_42_0031
+   0425: FB 32      SEQ LL, #50
+   0427: 03 05F7    JMP RRNZ, L12_case_42_0032
+   042A: FB 33      SEQ LL, #51
+   042C: 03 060E    JMP RRNZ, L12_case_42_0033
+   042F: FB 34      SEQ LL, #52
+   0431: 03 0625    JMP RRNZ, L12_case_42_0034
+   0434: FB 35      SEQ LL, #53
+   0436: 03 063C    JMP RRNZ, L12_case_42_0035
+   0439: FB 36      SEQ LL, #54
+   043B: 03 0653    JMP RRNZ, L12_case_42_0036
+   043E: FB 37      SEQ LL, #55
+   0440: 03 066A    JMP RRNZ, L12_case_42_0037
+   0443: FB 38      SEQ LL, #56
+   0445: 03 0681    JMP RRNZ, L12_case_42_0038
+   0448: FB 39      SEQ LL, #57
+   044A: 03 0698    JMP RRNZ, L12_case_42_0039
+   044D: FB 2A      SEQ LL, #42
+   044F: 03 06AF    JMP RRNZ, L12_case_42_002A
+   0452: D0         SEQ LL, #0
+   0453: 03 06BF    JMP RRNZ, L12_case_42_0000
+   0456: 02 06C8    JMP L12_deflt_42
+L12_case_42_0058:
+   0459: F8 0A15    MOVE #Cstr_19, RR
+   045C: 0E         MOVE RR, -(SP)
+   045D: 61 1C      MOVE 28(SP), RR
+   045F: A2         ADD RR, #2
+   0460: 5D 1C      MOVE RR, 28(SP)
+   0462: B2         SUB RR, #2
+   0463: 46         MOVE (RR), RR
+   0464: 0E         MOVE RR, -(SP)
+   0465: 6D 04      LEA 4(SP), RR
+   0467: 0E         MOVE RR, -(SP)
+   0468: 05 016D    CALL Cprint_hex
+   046B: 2B 06      ADD SP, #6
+   046D: F9 30      MOVE #48, RR
+   046F: 0F         MOVE R, -(SP)
+   0470: 61 0F      MOVE 15(SP), RR
+   0472: 0E         MOVE RR, -(SP)
+   0473: 61 13      MOVE 19(SP), RR
+   0475: 0E         MOVE RR, -(SP)
+   0476: F8 0A26    MOVE #Cstr_20, RR
+   0479: 0E         MOVE RR, -(SP)
+   047A: 63 1B      MOVE 27(SP), RS
+   047C: 0F         MOVE R, -(SP)
+   047D: 63 1D      MOVE 29(SP), RS
+   047F: 0F         MOVE R, -(SP)
+   0480: 63 1F      MOVE 31(SP), RS
+   0482: 0F         MOVE R, -(SP)
+   0483: 6D 0A      LEA 10(SP), RR
+   0485: 0E         MOVE RR, -(SP)
+   0486: 05 02B2    CALL Cprint_item
+   0489: 2B 0C      ADD SP, #12
+   048B: 67 18      MOVE 24(SP), LL
+   048D: 58         ADD LL, RR
+   048E: 5D 18      MOVE RR, 24(SP)
+   0490: 02 06D8    JMP L12_brk_42
+L12_case_42_0064:
+   0493: 61 1A      MOVE 26(SP), RR
+   0495: 46         MOVE (RR), RR
+   0496: 21 00      SLT RR, #0
+   0498: 04 04A9    JMP RRZ, L12_endif_43
+   049B: F9 2D      MOVE #45, RR
+   049D: 5F 15      MOVE R, 21(SP)
+   049F: 61 1A      MOVE 26(SP), RR
+   04A1: 46         MOVE (RR), RR
+   04A2: 3E         NEG RR
+   04A3: 0E         MOVE RR, -(SP)
+   04A4: 61 1C      MOVE 28(SP), RR
+   04A6: 43         MOVE RR, LL
+   04A7: 08         MOVE (SP)+, RR
+   04A8: 44         MOVE RR, (LL)
+L12_endif_43:
+   04A9: 61 1A      MOVE 26(SP), RR
+   04AB: A2         ADD RR, #2
+   04AC: 5D 1A      MOVE RR, 26(SP)
+   04AE: B2         SUB RR, #2
+   04AF: 46         MOVE (RR), RR
+   04B0: 0E         MOVE RR, -(SP)
+   04B1: 6D 02      LEA 2(SP), RR
+   04B3: 0E         MOVE RR, -(SP)
+   04B4: 05 01E2    CALL Cprint_unsigned
+   04B7: 2B 04      ADD SP, #4
+   04B9: F9 30      MOVE #48, RR
+   04BB: 0F         MOVE R, -(SP)
+   04BC: 61 0F      MOVE 15(SP), RR
+   04BE: 0E         MOVE RR, -(SP)
+   04BF: 61 13      MOVE 19(SP), RR
+   04C1: 0E         MOVE RR, -(SP)
+   04C2: F8 0A29    MOVE #Cstr_21, RR
+   04C5: 0E         MOVE RR, -(SP)
+   04C6: 63 1B      MOVE 27(SP), RS
+   04C8: 0F         MOVE R, -(SP)
+   04C9: 63 1D      MOVE 29(SP), RS
+   04CB: 0F         MOVE R, -(SP)
+   04CC: 63 1F      MOVE 31(SP), RS
+   04CE: 0F         MOVE R, -(SP)
+   04CF: 6D 0A      LEA 10(SP), RR
+   04D1: 0E         MOVE RR, -(SP)
+   04D2: 05 02B2    CALL Cprint_item
+   04D5: 2B 0C      ADD SP, #12
+   04D7: 67 18      MOVE 24(SP), LL
+   04D9: 58         ADD LL, RR
+   04DA: 5D 18      MOVE RR, 24(SP)
+   04DC: 02 06D8    JMP L12_brk_42
+L12_case_42_0073:
+   04DF: F9 20      MOVE #32, RR
+   04E1: 0F         MOVE R, -(SP)
+   04E2: 61 0F      MOVE 15(SP), RR
+   04E4: 0E         MOVE RR, -(SP)
+   04E5: 61 13      MOVE 19(SP), RR
+   04E7: 0E         MOVE RR, -(SP)
+   04E8: F8 0A2A    MOVE #Cstr_22, RR
+   04EB: 0E         MOVE RR, -(SP)
+   04EC: F9 20      MOVE #32, RR
+   04EE: 0F         MOVE R, -(SP)
+   04EF: C0         MOVE #0, RR
+   04F0: 0F         MOVE R, -(SP)
+   04F1: 63 1F      MOVE 31(SP), RS
+   04F3: 11 02      AND RR, #2
+   04F5: 0F         MOVE R, -(SP)
+   04F6: 61 24      MOVE 36(SP), RR
+   04F8: A2         ADD RR, #2
+   04F9: 5D 24      MOVE RR, 36(SP)
+   04FB: B2         SUB RR, #2
+   04FC: 46         MOVE (RR), RR
+   04FD: 0E         MOVE RR, -(SP)
+   04FE: 05 02B2    CALL Cprint_item
+   0501: 2B 0C      ADD SP, #12
+   0503: 67 18      MOVE 24(SP), LL
+   0505: 58         ADD LL, RR
+   0506: 5D 18      MOVE RR, 24(SP)
+   0508: 02 06D8    JMP L12_brk_42
+L12_case_42_0075:
+   050B: 61 1A      MOVE 26(SP), RR
+   050D: A2         ADD RR, #2
+   050E: 5D 1A      MOVE RR, 26(SP)
+   0510: B2         SUB RR, #2
+   0511: 46         MOVE (RR), RR
+   0512: 0E         MOVE RR, -(SP)
+   0513: 6D 02      LEA 2(SP), RR
+   0515: 0E         MOVE RR, -(SP)
+   0516: 05 01E2    CALL Cprint_unsigned
+   0519: 2B 04      ADD SP, #4
+   051B: F9 30      MOVE #48, RR
+   051D: 0F         MOVE R, -(SP)
+   051E: 61 0F      MOVE 15(SP), RR
+   0520: 0E         MOVE RR, -(SP)
+   0521: 61 13      MOVE 19(SP), RR
+   0523: 0E         MOVE RR, -(SP)
+   0524: F8 0A2B    MOVE #Cstr_23, RR
+   0527: 0E         MOVE RR, -(SP)
+   0528: 63 1B      MOVE 27(SP), RS
+   052A: 0F         MOVE R, -(SP)
+   052B: 63 1D      MOVE 29(SP), RS
+   052D: 0F         MOVE R, -(SP)
+   052E: 63 1F      MOVE 31(SP), RS
+   0530: 0F         MOVE R, -(SP)
+   0531: 6D 0A      LEA 10(SP), RR
+   0533: 0E         MOVE RR, -(SP)
+   0534: 05 02B2    CALL Cprint_item
+   0537: 2B 0C      ADD SP, #12
+   0539: 67 18      MOVE 24(SP), LL
+   053B: 58         ADD LL, RR
+   053C: 5D 18      MOVE RR, 24(SP)
+   053E: 02 06D8    JMP L12_brk_42
+L12_case_42_0078:
+   0541: F8 0A2C    MOVE #Cstr_24, RR
+   0544: 0E         MOVE RR, -(SP)
+   0545: 61 1C      MOVE 28(SP), RR
+   0547: A2         ADD RR, #2
+   0548: 5D 1C      MOVE RR, 28(SP)
+   054A: B2         SUB RR, #2
+   054B: 46         MOVE (RR), RR
+   054C: 0E         MOVE RR, -(SP)
+   054D: 6D 04      LEA 4(SP), RR
+   054F: 0E         MOVE RR, -(SP)
+   0550: 05 016D    CALL Cprint_hex
+   0553: 2B 06      ADD SP, #6
+   0555: F9 30      MOVE #48, RR
+   0557: 0F         MOVE R, -(SP)
+   0558: 61 0F      MOVE 15(SP), RR
+   055A: 0E         MOVE RR, -(SP)
+   055B: 61 13      MOVE 19(SP), RR
+   055D: 0E         MOVE RR, -(SP)
+   055E: F8 0A3D    MOVE #Cstr_25, RR
+   0561: 0E         MOVE RR, -(SP)
+   0562: 63 1B      MOVE 27(SP), RS
+   0564: 0F         MOVE R, -(SP)
+   0565: 63 1D      MOVE 29(SP), RS
+   0567: 0F         MOVE R, -(SP)
+   0568: 63 1F      MOVE 31(SP), RS
+   056A: 0F         MOVE R, -(SP)
+   056B: 6D 0A      LEA 10(SP), RR
+   056D: 0E         MOVE RR, -(SP)
+   056E: 05 02B2    CALL Cprint_item
+   0571: 2B 0C      ADD SP, #12
+   0573: 67 18      MOVE 24(SP), LL
+   0575: 58         ADD LL, RR
+   0576: 5D 18      MOVE RR, 24(SP)
+   0578: 02 06D8    JMP L12_brk_42
+L12_case_42_0063:
+   057B: 61 1A      MOVE 26(SP), RR
+   057D: A2         ADD RR, #2
+   057E: 5D 1A      MOVE RR, 26(SP)
+   0580: B2         SUB RR, #2
+   0581: 46         MOVE (RR), RR
+   0582: 0F         MOVE R, -(SP)
+   0583: 05 0128    CALL Cputchr
+   0586: 2B 01      ADD SP, #1
+   0588: 67 18      MOVE 24(SP), LL
+   058A: 58         ADD LL, RR
+   058B: 5D 18      MOVE RR, 24(SP)
+   058D: 02 06D8    JMP L12_brk_42
+L12_case_42_0023:
+   0590: 63 16      MOVE 22(SP), RS
+   0592: 13 01      OR RR, #1
+   0594: 5F 16      MOVE R, 22(SP)
+   0596: 02 06DB    JMP L12_cont_40
+L12_case_42_002D:
+   0599: 63 16      MOVE 22(SP), RS
+   059B: 13 02      OR RR, #2
+   059D: 5F 16      MOVE R, 22(SP)
+   059F: 02 06DB    JMP L12_cont_40
+L12_case_42_0020:
+   05A2: 63 15      MOVE 21(SP), RS
+   05A4: 3D         LNOT RR
+   05A5: 04 05AC    JMP RRZ, L12_endif_44
+   05A8: F9 20      MOVE #32, RR
+   05AA: 5F 15      MOVE R, 21(SP)
+L12_endif_44:
+   05AC: 02 06DB    JMP L12_cont_40
+L12_case_42_002B:
+   05AF: F9 2B      MOVE #43, RR
+   05B1: 5F 15      MOVE R, 21(SP)
+   05B3: 02 06DB    JMP L12_cont_40
+L12_case_42_002E:
+   05B6: 6D 0E      LEA 14(SP), RR
+   05B8: 5D 0C      MOVE RR, 12(SP)
+   05BA: 02 06DB    JMP L12_cont_40
+L12_case_42_0030:
+   05BD: 61 0C      MOVE 12(SP), RR
+   05BF: 46         MOVE (RR), RR
+   05C0: 04 05D9    JMP RRZ, L12_else_45
+   05C3: 61 0C      MOVE 12(SP), RR
+   05C5: 46         MOVE (RR), RR
+   05C6: 43         MOVE RR, LL
+   05C7: F9 0A      MOVE #10, RR
+   05C9: 79         DI 
+   05CA: 71         MUL_IU 
+   05CB: 05 000B    CALL mult_div
+   05CE: 75         MD_FIN 
+   05CF: 77         EI 
+   05D0: 0E         MOVE RR, -(SP)
+   05D1: 61 0E      MOVE 14(SP), RR
+   05D3: 43         MOVE RR, LL
+   05D4: 08         MOVE (SP)+, RR
+   05D5: 44         MOVE RR, (LL)
+   05D6: 02 05DD    JMP L12_endif_45
+L12_else_45:
+   05D9: F9 30      MOVE #48, RR
+   05DB: 5F 14      MOVE R, 20(SP)
+L12_endif_45:
+   05DD: 02 06DB    JMP L12_cont_40
+L12_case_42_0031:
+   05E0: 61 0C      MOVE 12(SP), RR
+   05E2: 46         MOVE (RR), RR
+   05E3: 43         MOVE RR, LL
+   05E4: F9 0A      MOVE #10, RR
+   05E6: 79         DI 
+   05E7: 71         MUL_IU 
+   05E8: 05 000B    CALL mult_div
+   05EB: 75         MD_FIN 
+   05EC: 77         EI 
+   05ED: A1         ADD RR, #1
+   05EE: 0E         MOVE RR, -(SP)
+   05EF: 61 0E      MOVE 14(SP), RR
+   05F1: 43         MOVE RR, LL
+   05F2: 08         MOVE (SP)+, RR
+   05F3: 44         MOVE RR, (LL)
+   05F4: 02 06DB    JMP L12_cont_40
+L12_case_42_0032:
+   05F7: 61 0C      MOVE 12(SP), RR
+   05F9: 46         MOVE (RR), RR
+   05FA: 43         MOVE RR, LL
+   05FB: F9 0A      MOVE #10, RR
+   05FD: 79         DI 
+   05FE: 71         MUL_IU 
+   05FF: 05 000B    CALL mult_div
+   0602: 75         MD_FIN 
+   0603: 77         EI 
+   0604: A2         ADD RR, #2
+   0605: 0E         MOVE RR, -(SP)
+   0606: 61 0E      MOVE 14(SP), RR
+   0608: 43         MOVE RR, LL
+   0609: 08         MOVE (SP)+, RR
+   060A: 44         MOVE RR, (LL)
+   060B: 02 06DB    JMP L12_cont_40
+L12_case_42_0033:
+   060E: 61 0C      MOVE 12(SP), RR
+   0610: 46         MOVE (RR), RR
+   0611: 43         MOVE RR, LL
+   0612: F9 0A      MOVE #10, RR
+   0614: 79         DI 
+   0615: 71         MUL_IU 
+   0616: 05 000B    CALL mult_div
+   0619: 75         MD_FIN 
+   061A: 77         EI 
+   061B: A3         ADD RR, #3
+   061C: 0E         MOVE RR, -(SP)
+   061D: 61 0E      MOVE 14(SP), RR
+   061F: 43         MOVE RR, LL
+   0620: 08         MOVE (SP)+, RR
+   0621: 44         MOVE RR, (LL)
+   0622: 02 06DB    JMP L12_cont_40
+L12_case_42_0034:
+   0625: 61 0C      MOVE 12(SP), RR
+   0627: 46         MOVE (RR), RR
+   0628: 43         MOVE RR, LL
+   0629: F9 0A      MOVE #10, RR
+   062B: 79         DI 
+   062C: 71         MUL_IU 
+   062D: 05 000B    CALL mult_div
+   0630: 75         MD_FIN 
+   0631: 77         EI 
+   0632: A4         ADD RR, #4
+   0633: 0E         MOVE RR, -(SP)
+   0634: 61 0E      MOVE 14(SP), RR
+   0636: 43         MOVE RR, LL
+   0637: 08         MOVE (SP)+, RR
+   0638: 44         MOVE RR, (LL)
+   0639: 02 06DB    JMP L12_cont_40
+L12_case_42_0035:
+   063C: 61 0C      MOVE 12(SP), RR
+   063E: 46         MOVE (RR), RR
+   063F: 43         MOVE RR, LL
+   0640: F9 0A      MOVE #10, RR
+   0642: 79         DI 
+   0643: 71         MUL_IU 
+   0644: 05 000B    CALL mult_div
+   0647: 75         MD_FIN 
+   0648: 77         EI 
+   0649: A5         ADD RR, #5
+   064A: 0E         MOVE RR, -(SP)
+   064B: 61 0E      MOVE 14(SP), RR
+   064D: 43         MOVE RR, LL
+   064E: 08         MOVE (SP)+, RR
+   064F: 44         MOVE RR, (LL)
+   0650: 02 06DB    JMP L12_cont_40
+L12_case_42_0036:
+   0653: 61 0C      MOVE 12(SP), RR
+   0655: 46         MOVE (RR), RR
+   0656: 43         MOVE RR, LL
+   0657: F9 0A      MOVE #10, RR
+   0659: 79         DI 
+   065A: 71         MUL_IU 
+   065B: 05 000B    CALL mult_div
+   065E: 75         MD_FIN 
+   065F: 77         EI 
+   0660: A6         ADD RR, #6
+   0661: 0E         MOVE RR, -(SP)
+   0662: 61 0E      MOVE 14(SP), RR
+   0664: 43         MOVE RR, LL
+   0665: 08         MOVE (SP)+, RR
+   0666: 44         MOVE RR, (LL)
+   0667: 02 06DB    JMP L12_cont_40
+L12_case_42_0037:
+   066A: 61 0C      MOVE 12(SP), RR
+   066C: 46         MOVE (RR), RR
+   066D: 43         MOVE RR, LL
+   066E: F9 0A      MOVE #10, RR
+   0670: 79         DI 
+   0671: 71         MUL_IU 
+   0672: 05 000B    CALL mult_div
+   0675: 75         MD_FIN 
+   0676: 77         EI 
+   0677: A7         ADD RR, #7
+   0678: 0E         MOVE RR, -(SP)
+   0679: 61 0E      MOVE 14(SP), RR
+   067B: 43         MOVE RR, LL
+   067C: 08         MOVE (SP)+, RR
+   067D: 44         MOVE RR, (LL)
+   067E: 02 06DB    JMP L12_cont_40
+L12_case_42_0038:
+   0681: 61 0C      MOVE 12(SP), RR
+   0683: 46         MOVE (RR), RR
+   0684: 43         MOVE RR, LL
+   0685: F9 0A      MOVE #10, RR
+   0687: 79         DI 
+   0688: 71         MUL_IU 
+   0689: 05 000B    CALL mult_div
+   068C: 75         MD_FIN 
+   068D: 77         EI 
+   068E: A8         ADD RR, #8
+   068F: 0E         MOVE RR, -(SP)
+   0690: 61 0E      MOVE 14(SP), RR
+   0692: 43         MOVE RR, LL
+   0693: 08         MOVE (SP)+, RR
+   0694: 44         MOVE RR, (LL)
+   0695: 02 06DB    JMP L12_cont_40
+L12_case_42_0039:
+   0698: 61 0C      MOVE 12(SP), RR
+   069A: 46         MOVE (RR), RR
+   069B: 43         MOVE RR, LL
+   069C: F9 0A      MOVE #10, RR
+   069E: 79         DI 
+   069F: 71         MUL_IU 
+   06A0: 05 000B    CALL mult_div
+   06A3: 75         MD_FIN 
+   06A4: 77         EI 
+   06A5: A9         ADD RR, #9
+   06A6: 0E         MOVE RR, -(SP)
+   06A7: 61 0E      MOVE 14(SP), RR
+   06A9: 43         MOVE RR, LL
+   06AA: 08         MOVE (SP)+, RR
+   06AB: 44         MOVE RR, (LL)
+   06AC: 02 06DB    JMP L12_cont_40
+L12_case_42_002A:
+   06AF: 61 1A      MOVE 26(SP), RR
+   06B1: A2         ADD RR, #2
+   06B2: 5D 1A      MOVE RR, 26(SP)
+   06B4: B2         SUB RR, #2
+   06B5: 46         MOVE (RR), RR
+   06B6: 0E         MOVE RR, -(SP)
+   06B7: 61 0E      MOVE 14(SP), RR
+   06B9: 43         MOVE RR, LL
+   06BA: 08         MOVE (SP)+, RR
+   06BB: 44         MOVE RR, (LL)
+   06BC: 02 06DB    JMP L12_cont_40
+L12_case_42_0000:
+   06BF: 61 1E      MOVE 30(SP), RR
+   06C1: B1         SUB RR, #1
+   06C2: 5D 1E      MOVE RR, 30(SP)
+   06C4: A1         ADD RR, #1
+   06C5: 02 06D8    JMP L12_brk_42
+L12_deflt_42:
+   06C8: 63 17      MOVE 23(SP), RS
+   06CA: 0F         MOVE R, -(SP)
+   06CB: 05 0128    CALL Cputchr
+   06CE: 2B 01      ADD SP, #1
+   06D0: 67 18      MOVE 24(SP), LL
+   06D2: 58         ADD LL, RR
+   06D3: 5D 18      MOVE RR, 24(SP)
+   06D5: 02 06D8    JMP L12_brk_42
+L12_brk_42:
+   06D8: 02 06DE    JMP L12_brk_41
+L12_cont_40:
+   06DB: 02 03DA    JMP L12_loop_40
+L12_brk_41:
+L12_cont_37:
+   06DE: 61 1E      MOVE 30(SP), RR
+   06E0: A1         ADD RR, #1
+   06E1: 5D 1E      MOVE RR, 30(SP)
+   06E3: B1         SUB RR, #1
+   06E4: 47         MOVE (RR), RS
+   06E5: 5F 17      MOVE R, 23(SP)
+   06E7: 03 03AF    JMP RRNZ, L12_loop_37
+L12_brk_38:
+   06EA: 61 18      MOVE 24(SP), RR
+   06EC: 02 06EF    JMP L12_return
+L12_return:
+   06EF: 2B 1C      ADD SP, #28
+   06F1: 07         RET 
+Cgetchr:
+   06F2: 2D         CLRB -(SP)
+L13_loop_46:
+L13_cont_46:
+   06F3: 4B 002E    MOVE (Cserial_in_length), RU
+   06F6: 3D         LNOT RR
+   06F7: 03 06F3    JMP RRNZ, L13_loop_46
+L13_brk_47:
+   06FA: 4B 002C    MOVE (Cserial_in_get), RU
+   06FD: F4 001C    ADD RR, #Cserial_in_buffer
+   0700: 48         MOVE (RR), RU
+   0701: 5F 00      MOVE R, 0(SP)
+   0703: 4B 002C    MOVE (Cserial_in_get), RU
+   0706: A1         ADD RR, #1
+   0707: 5B 002C    MOVE R, (Cserial_in_get)
+   070A: 11 0F      AND RR, #15
+   070C: 5B 002C    MOVE R, (Cserial_in_get)
+   070F: 79         DI 
+   0710: 4B 002E    MOVE (Cserial_in_length), RU
+   0713: B1         SUB RR, #1
+   0714: 5B 002E    MOVE R, (Cserial_in_length)
+   0717: 77         EI 
+   0718: 63 00      MOVE 0(SP), RS
+   071A: 02 071D    JMP L13_return
+L13_return:
+   071D: 2B 01      ADD SP, #1
+   071F: 07         RET 
+Cpeekchr:
+L14_loop_48:
+L14_cont_48:
+   0720: 4B 002E    MOVE (Cserial_in_length), RU
+   0723: 3D         LNOT RR
+   0724: 03 0720    JMP RRNZ, L14_loop_48
+L14_brk_49:
+   0727: 4B 002C    MOVE (Cserial_in_get), RU
+   072A: F4 001C    ADD RR, #Cserial_in_buffer
+   072D: 48         MOVE (RR), RU
+   072E: 02 0731    JMP L14_return
+L14_return:
+   0731: 07         RET 
+Cgetnibble:
+   0732: 05 0720    CALL Cpeekchr
+   0735: 0F         MOVE R, -(SP)
+   0736: F8 FFFF    MOVE #65535, RR
+   0739: 0E         MOVE RR, -(SP)
+   073A: 63 02      MOVE 2(SP), RS
+   073C: 1B 30      SGE RR, #48
+   073E: 04 0745    JMP RRZ, L15_endif_51
+   0741: 63 02      MOVE 2(SP), RS
+   0743: 1F 39      SLE RR, #57
+L15_endif_51:
+   0745: 04 0751    JMP RRZ, L15_else_50
+   0748: 63 02      MOVE 2(SP), RS
+   074A: F7 30      SUB RR, #48
+   074C: 5D 00      MOVE RR, 0(SP)
+   074E: 02 077C    JMP L15_endif_50
+L15_else_50:
+   0751: 63 02      MOVE 2(SP), RS
+   0753: 1B 41      SGE RR, #65
+   0755: 04 075C    JMP RRZ, L15_endif_53
+   0758: 63 02      MOVE 2(SP), RS
+   075A: 1F 46      SLE RR, #70
+L15_endif_53:
+   075C: 04 0768    JMP RRZ, L15_else_52
+   075F: 63 02      MOVE 2(SP), RS
+   0761: F7 37      SUB RR, #55
+   0763: 5D 00      MOVE RR, 0(SP)
+   0765: 02 077C    JMP L15_endif_52
+L15_else_52:
+   0768: 63 02      MOVE 2(SP), RS
+   076A: 1B 61      SGE RR, #97
+   076C: 04 0773    JMP RRZ, L15_endif_55
+   076F: 63 02      MOVE 2(SP), RS
+   0771: 1F 66      SLE RR, #102
+L15_endif_55:
+   0773: 04 077C    JMP RRZ, L15_endif_54
+   0776: 63 02      MOVE 2(SP), RS
+   0778: F7 57      SUB RR, #87
+   077A: 5D 00      MOVE RR, 0(SP)
+L15_endif_54:
+L15_endif_52:
+L15_endif_50:
+   077C: 61 00      MOVE 0(SP), RR
+   077E: 18 FFFF    SNE RR, #65535
+   0781: 04 0794    JMP RRZ, L15_endif_56
+   0784: 05 06F2    CALL Cgetchr
+   0787: 63 05      MOVE 5(SP), RS
+   0789: 04 0794    JMP RRZ, L15_endif_57
+   078C: 63 02      MOVE 2(SP), RS
+   078E: 0F         MOVE R, -(SP)
+   078F: 05 0128    CALL Cputchr
+   0792: 2B 01      ADD SP, #1
+L15_endif_57:
+L15_endif_56:
+   0794: 61 00      MOVE 0(SP), RR
+   0796: 02 0799    JMP L15_return
+L15_return:
+   0799: 2B 03      ADD SP, #3
+   079B: 07         RET 
+Cgethex:
+   079C: 2C         CLRW -(SP)
+   079D: 2D         CLRB -(SP)
+   079E: 02 07AB    JMP L16_cont_58
+L16_loop_58:
+   07A1: 61 01      MOVE 1(SP), RR
+   07A3: 52 04      LSL RR, #4
+   07A5: 43         MOVE RR, LL
+   07A6: 63 00      MOVE 0(SP), RS
+   07A8: 31         OR LL, RR
+   07A9: 5D 01      MOVE RR, 1(SP)
+L16_cont_58:
+   07AB: 63 05      MOVE 5(SP), RS
+   07AD: 0F         MOVE R, -(SP)
+   07AE: 05 0732    CALL Cgetnibble
+   07B1: 2B 01      ADD SP, #1
+   07B3: 5F 00      MOVE R, 0(SP)
+   07B5: 18 FFFF    SNE RR, #65535
+   07B8: 03 07A1    JMP RRNZ, L16_loop_58
+L16_brk_59:
+   07BB: 61 01      MOVE 1(SP), RR
+   07BD: 02 07C0    JMP L16_return
+L16_return:
+   07C0: 2B 03      ADD SP, #3
+   07C2: 07         RET 
+Cshow_time:
+   07C3: 2C         CLRW -(SP)
+   07C4: 2C         CLRW -(SP)
+   07C5: 2C         CLRW -(SP)
+L17_loop_60:
+   07C6: C0         MOVE #0, RR
+   07C7: 5B 00AA    MOVE R, (Cseconds_changed)
+   07CA: 49 00A4    MOVE (Cseconds_low), RR
+   07CD: 5D 04      MOVE RR, 4(SP)
+   07CF: 49 00A6    MOVE (Cseconds_mid), RR
+   07D2: 5D 02      MOVE RR, 2(SP)
+   07D4: 49 00A8    MOVE (Cseconds_high), RR
+   07D7: 5D 00      MOVE RR, 0(SP)
+L17_cont_60:
+   07D9: 4B 00AA    MOVE (Cseconds_changed), RU
+   07DC: 03 07C6    JMP RRNZ, L17_loop_60
+L17_brk_61:
+   07DF: 61 04      MOVE 4(SP), RR
+   07E1: 0E         MOVE RR, -(SP)
+   07E2: 61 04      MOVE 4(SP), RR
+   07E4: 0E         MOVE RR, -(SP)
+   07E5: 61 04      MOVE 4(SP), RR
+   07E7: 0E         MOVE RR, -(SP)
+   07E8: F8 0A40    MOVE #Cstr_28, RR
+   07EB: 0E         MOVE RR, -(SP)
+   07EC: 05 0399    CALL Cprintf
+   07EF: 2B 08      ADD SP, #8
+L17_return:
+   07F1: 2B 06      ADD SP, #6
+   07F3: 07         RET 
+Cdisplay_memory:
+   07F4: 2D         CLRB -(SP)
+   07F5: 2C         CLRW -(SP)
+   07F6: 2C         CLRW -(SP)
+   07F7: C0         MOVE #0, RR
+   07F8: 5D 02      MOVE RR, 2(SP)
+   07FA: 02 0893    JMP L18_tst_62
+L18_loop_62:
+   07FD: 61 07      MOVE 7(SP), RR
+   07FF: 0E         MOVE RR, -(SP)
+   0800: F8 0A64    MOVE #Cstr_29, RR
+   0803: 0E         MOVE RR, -(SP)
+   0804: 05 0399    CALL Cprintf
+   0807: 2B 04      ADD SP, #4
+   0809: C0         MOVE #0, RR
+   080A: 5D 00      MOVE RR, 0(SP)
+   080C: 02 0826    JMP L18_tst_64
+L18_loop_64:
+   080F: 61 07      MOVE 7(SP), RR
+   0811: A1         ADD RR, #1
+   0812: 5D 07      MOVE RR, 7(SP)
+   0814: B1         SUB RR, #1
+   0815: 48         MOVE (RR), RU
+   0816: 0E         MOVE RR, -(SP)
+   0817: F8 0A6B    MOVE #Cstr_30, RR
+   081A: 0E         MOVE RR, -(SP)
+   081B: 05 0399    CALL Cprintf
+   081E: 2B 04      ADD SP, #4
+L18_cont_64:
+   0820: 61 00      MOVE 0(SP), RR
+   0822: A1         ADD RR, #1
+   0823: 5D 00      MOVE RR, 0(SP)
+   0825: B1         SUB RR, #1
+L18_tst_64:
+   0826: 61 00      MOVE 0(SP), RR
+   0828: 21 10      SLT RR, #16
+   082A: 03 080F    JMP RRNZ, L18_loop_64
+L18_brk_65:
+   082D: 61 07      MOVE 7(SP), RR
+   082F: F7 10      SUB RR, #16
+   0831: 5D 07      MOVE RR, 7(SP)
+   0833: F8 0A72    MOVE #Cstr_31, RR
+   0836: 0E         MOVE RR, -(SP)
+   0837: 05 0399    CALL Cprintf
+   083A: 2B 02      ADD SP, #2
+   083C: C0         MOVE #0, RR
+   083D: 5D 00      MOVE RR, 0(SP)
+   083F: 02 087D    JMP L18_tst_66
+L18_loop_66:
+   0842: 61 07      MOVE 7(SP), RR
+   0844: A1         ADD RR, #1
+   0845: 5D 07      MOVE RR, 7(SP)
+   0847: B1         SUB RR, #1
+   0848: 48         MOVE (RR), RU
+   0849: 5F 04      MOVE R, 4(SP)
+   084B: 63 04      MOVE 4(SP), RS
+   084D: 21 20      SLT RR, #32
+   084F: 04 085D    JMP RRZ, L18_else_68
+   0852: F9 2E      MOVE #46, RR
+   0854: 0F         MOVE R, -(SP)
+   0855: 05 0128    CALL Cputchr
+   0858: 2B 01      ADD SP, #1
+   085A: 02 0877    JMP L18_endif_68
+L18_else_68:
+   085D: 63 04      MOVE 4(SP), RS
+   085F: 21 7F      SLT RR, #127
+   0861: 04 086F    JMP RRZ, L18_else_69
+   0864: 63 04      MOVE 4(SP), RS
+   0866: 0F         MOVE R, -(SP)
+   0867: 05 0128    CALL Cputchr
+   086A: 2B 01      ADD SP, #1
+   086C: 02 0877    JMP L18_endif_69
+L18_else_69:
+   086F: F9 2E      MOVE #46, RR
+   0871: 0F         MOVE R, -(SP)
+   0872: 05 0128    CALL Cputchr
+   0875: 2B 01      ADD SP, #1
+L18_endif_69:
+L18_endif_68:
+L18_cont_66:
+   0877: 61 00      MOVE 0(SP), RR
+   0879: A1         ADD RR, #1
+   087A: 5D 00      MOVE RR, 0(SP)
+   087C: B1         SUB RR, #1
+L18_tst_66:
+   087D: 61 00      MOVE 0(SP), RR
+   087F: 21 10      SLT RR, #16
+   0881: 03 0842    JMP RRNZ, L18_loop_66
+L18_brk_67:
+   0884: F8 0A76    MOVE #Cstr_32, RR
+   0887: 0E         MOVE RR, -(SP)
+   0888: 05 0399    CALL Cprintf
+   088B: 2B 02      ADD SP, #2
+L18_cont_62:
+   088D: 61 02      MOVE 2(SP), RR
+   088F: A1         ADD RR, #1
+   0890: 5D 02      MOVE RR, 2(SP)
+   0892: B1         SUB RR, #1
+L18_tst_62:
+   0893: 61 02      MOVE 2(SP), RR
+   0895: 21 10      SLT RR, #16
+   0897: 03 07FD    JMP RRNZ, L18_loop_62
+L18_brk_63:
+L18_return:
+   089A: 2B 05      ADD SP, #5
+   089C: 07         RET 
+Cmain:
+   089D: 2D         CLRB -(SP)
+   089E: 2D         CLRB -(SP)
+   089F: 2D         CLRB -(SP)
+   08A0: 2C         CLRW -(SP)
+   08A1: C5         MOVE #5, RR
+   08A2: 2F 03      OUT R, (OUT_INT_MASK)
+L19_loop_70:
+   08A4: 63 04      MOVE 4(SP), RS
+   08A6: 5F 02      MOVE R, 2(SP)
+   08A8: 63 03      MOVE 3(SP), RS
+   08AA: 3D         LNOT RR
+   08AB: 04 08B7    JMP RRZ, L19_endif_72
+   08AE: F8 0A79    MOVE #Cstr_35, RR
+   08B1: 0E         MOVE RR, -(SP)
+   08B2: 05 0399    CALL Cprintf
+   08B5: 2B 02      ADD SP, #2
+L19_endif_72:
+   08B7: C0         MOVE #0, RR
+   08B8: 5F 03      MOVE R, 3(SP)
+   08BA: 05 06F2    CALL Cgetchr
+   08BD: 5F 04      MOVE R, 4(SP)
+   08BF: 43         MOVE RR, LL
+   08C0: FB 0D      SEQ LL, #13
+   08C2: 03 091D    JMP RRNZ, L19_case_73_000D
+   08C5: FB 0A      SEQ LL, #10
+   08C7: 03 091D    JMP RRNZ, L19_case_73_000A
+   08CA: FB 43      SEQ LL, #67
+   08CC: 03 0946    JMP RRNZ, L19_case_73_0043
+   08CF: FB 63      SEQ LL, #99
+   08D1: 03 0946    JMP RRNZ, L19_case_73_0063
+   08D4: FB 44      SEQ LL, #68
+   08D6: 03 094C    JMP RRNZ, L19_case_73_0044
+   08D9: FB 64      SEQ LL, #100
+   08DB: 03 094C    JMP RRNZ, L19_case_73_0064
+   08DE: FB 45      SEQ LL, #69
+   08E0: 03 0979    JMP RRNZ, L19_case_73_0045
+   08E3: FB 65      SEQ LL, #101
+   08E5: 03 0979    JMP RRNZ, L19_case_73_0065
+   08E8: FB 4D      SEQ LL, #77
+   08EA: 03 099A    JMP RRNZ, L19_case_73_004D
+   08ED: FB 6D      SEQ LL, #109
+   08EF: 03 099A    JMP RRNZ, L19_case_73_006D
+   08F2: FB 53      SEQ LL, #83
+   08F4: 03 09D4    JMP RRNZ, L19_case_73_0053
+   08F7: FB 73      SEQ LL, #115
+   08F9: 03 09D4    JMP RRNZ, L19_case_73_0073
+   08FC: FB 54      SEQ LL, #84
+   08FE: 03 09E3    JMP RRNZ, L19_case_73_0054
+   0901: FB 74      SEQ LL, #116
+   0903: 03 09E3    JMP RRNZ, L19_case_73_0074
+   0906: FB 51      SEQ LL, #81
+   0908: 03 09F2    JMP RRNZ, L19_case_73_0051
+   090B: FB 71      SEQ LL, #113
+   090D: 03 09F2    JMP RRNZ, L19_case_73_0071
+   0910: FB 58      SEQ LL, #88
+   0912: 03 09F2    JMP RRNZ, L19_case_73_0058
+   0915: FB 78      SEQ LL, #120
+   0917: 03 09F2    JMP RRNZ, L19_case_73_0078
+   091A: 02 0A06    JMP L19_deflt_73
+L19_case_73_000D:
+L19_case_73_000A:
+   091D: 63 02      MOVE 2(SP), RS
+   091F: 17 64      SEQ RR, #100
+   0921: 04 0940    JMP RRZ, L19_endif_74
+   0924: 61 00      MOVE 0(SP), RR
+   0926: F4 0100    ADD RR, #256
+   0929: 5D 00      MOVE RR, 0(SP)
+   092B: F8 0A7D    MOVE #Cstr_36, RR
+   092E: 0E         MOVE RR, -(SP)
+   092F: 05 0399    CALL Cprintf
+   0932: 2B 02      ADD SP, #2
+   0934: 61 00      MOVE 0(SP), RR
+   0936: 0E         MOVE RR, -(SP)
+   0937: 05 07F4    CALL Cdisplay_memory
+   093A: 2B 02      ADD SP, #2
+   093C: F9 64      MOVE #100, RR
+   093E: 5F 04      MOVE R, 4(SP)
+L19_endif_74:
+   0940: C1         MOVE #1, RR
+   0941: 5F 03      MOVE R, 3(SP)
+   0943: 02 0A0F    JMP L19_brk_73
+L19_case_73_0043:
+L19_case_73_0063:
+   0946: 05 07C3    CALL Cshow_time
+   0949: 02 0A0F    JMP L19_brk_73
+L19_case_73_0044:
+L19_case_73_0064:
+   094C: F9 64      MOVE #100, RR
+   094E: 5F 02      MOVE R, 2(SP)
+   0950: F8 0A82    MOVE #Cstr_37, RR
+   0953: 0E         MOVE RR, -(SP)
+   0954: 05 0399    CALL Cprintf
+   0957: 2B 02      ADD SP, #2
+   0959: C1         MOVE #1, RR
+   095A: 0F         MOVE R, -(SP)
+   095B: 05 079C    CALL Cgethex
+   095E: 2B 01      ADD SP, #1
+   0960: 5D 00      MOVE RR, 0(SP)
+   0962: F8 0A8B    MOVE #Cstr_38, RR
+   0965: 0E         MOVE RR, -(SP)
+   0966: 05 0399    CALL Cprintf
+   0969: 2B 02      ADD SP, #2
+   096B: 05 06F2    CALL Cgetchr
+   096E: 61 00      MOVE 0(SP), RR
+   0970: 0E         MOVE RR, -(SP)
+   0971: 05 07F4    CALL Cdisplay_memory
+   0974: 2B 02      ADD SP, #2
+   0976: 02 0A0F    JMP L19_brk_73
+L19_case_73_0045:
+L19_case_73_0065:
+   0979: F8 0A8E    MOVE #Cstr_39, RR
+   097C: 0E         MOVE RR, -(SP)
+   097D: 05 0399    CALL Cprintf
+   0980: 2B 02      ADD SP, #2
+   0982: C1         MOVE #1, RR
+   0983: 0F         MOVE R, -(SP)
+   0984: 05 079C    CALL Cgethex
+   0987: 2B 01      ADD SP, #1
+   0989: 2F 02      OUT R, (OUT_LEDS)
+   098B: F8 0A94    MOVE #Cstr_41, RR
+   098E: 0E         MOVE RR, -(SP)
+   098F: 05 0399    CALL Cprintf
+   0992: 2B 02      ADD SP, #2
+   0994: 05 06F2    CALL Cgetchr
+   0997: 02 0A0F    JMP L19_brk_73
+L19_case_73_004D:
+L19_case_73_006D:
+   099A: F8 0A97    MOVE #Cstr_42, RR
+   099D: 0E         MOVE RR, -(SP)
+   099E: 05 0399    CALL Cprintf
+   09A1: 2B 02      ADD SP, #2
+   09A3: C1         MOVE #1, RR
+   09A4: 0F         MOVE R, -(SP)
+   09A5: 05 079C    CALL Cgethex
+   09A8: 2B 01      ADD SP, #1
+   09AA: 5D 00      MOVE RR, 0(SP)
+   09AC: F8 0A9F    MOVE #Cstr_43, RR
+   09AF: 0E         MOVE RR, -(SP)
+   09B0: 05 0399    CALL Cprintf
+   09B3: 2B 02      ADD SP, #2
+   09B5: 05 06F2    CALL Cgetchr
+   09B8: C1         MOVE #1, RR
+   09B9: 0F         MOVE R, -(SP)
+   09BA: 05 079C    CALL Cgethex
+   09BD: 2B 01      ADD SP, #1
+   09BF: 0F         MOVE R, -(SP)
+   09C0: 61 01      MOVE 1(SP), RR
+   09C2: 43         MOVE RR, LL
+   09C3: 0A         MOVE (SP)+, RU
+   09C4: 45         MOVE R, (LL)
+   09C5: 05 06F2    CALL Cgetchr
+   09C8: F8 0AA7    MOVE #Cstr_44, RR
+   09CB: 0E         MOVE RR, -(SP)
+   09CC: 05 0399    CALL Cprintf
+   09CF: 2B 02      ADD SP, #2
+   09D1: 02 0A0F    JMP L19_brk_73
+L19_case_73_0053:
+L19_case_73_0073:
+   09D4: 2E 03      IN (IN_DIP_SWITCH), RU
+   09D6: 0E         MOVE RR, -(SP)
+   09D7: F8 0AAA    MOVE #Cstr_45, RR
+   09DA: 0E         MOVE RR, -(SP)
+   09DB: 05 0399    CALL Cprintf
+   09DE: 2B 04      ADD SP, #4
+   09E0: 02 0A0F    JMP L19_brk_73
+L19_case_73_0054:
+L19_case_73_0074:
+   09E3: 2E 02      IN (IN_TEMPERAT), RU
+   09E5: 0E         MOVE RR, -(SP)
+   09E6: F8 0ABF    MOVE #Cstr_47, RR
+   09E9: 0E         MOVE RR, -(SP)
+   09EA: 05 0399    CALL Cprintf
+   09ED: 2B 04      ADD SP, #4
+   09EF: 02 0A0F    JMP L19_brk_73
+L19_case_73_0051:
+L19_case_73_0071:
+L19_case_73_0058:
+L19_case_73_0078:
+   09F2: F8 0AE3    MOVE #Cstr_49, RR
+   09F5: 0E         MOVE RR, -(SP)
+   09F6: 05 0399    CALL Cprintf
+   09F9: 2B 02      ADD SP, #2
+L19_loop_75:
+L19_cont_75:
+   09FB: 4B 0078    MOVE (Cserial_out_length), RU
+   09FE: 03 09FB    JMP RRNZ, L19_loop_75
+L19_brk_76:
+   0A01: 79         DI 
+   0A02: 00         HALT 
+   0A03: 02 0A0F    JMP L19_brk_73
+L19_deflt_73:
+   0A06: F8 0AED    MOVE #Cstr_52, RR
+   0A09: 0E         MOVE RR, -(SP)
+   0A0A: 05 0399    CALL Cprintf
+   0A0D: 2B 02      ADD SP, #2
+L19_brk_73:
+L19_cont_70:
+   0A0F: 02 08A4    JMP L19_loop_70
+L19_brk_71:
+L19_return:
+   0A12: 2B 05      ADD SP, #5
+   0A14: 07         RET 
+Cstr_19:
+   0A15: 30         .BYTE 48
+   0A16: 31         .BYTE 49
+   0A17: 32         .BYTE 50
+   0A18: 33         .BYTE 51
+   0A19: 34         .BYTE 52
+   0A1A: 35         .BYTE 53
+   0A1B: 36         .BYTE 54
+   0A1C: 37         .BYTE 55
+   0A1D: 38         .BYTE 56
+   0A1E: 39         .BYTE 57
+   0A1F: 41         .BYTE 65
+   0A20: 42         .BYTE 66
+   0A21: 43         .BYTE 67
+   0A22: 44         .BYTE 68
+   0A23: 45         .BYTE 69
+   0A24: 46         .BYTE 70
+   0A25: 00         .BYTE 0
+Cstr_20:
+   0A26: 30         .BYTE 48
+   0A27: 58         .BYTE 88
+   0A28: 00         .BYTE 0
+Cstr_21:
+   0A29: 00         .BYTE 0
+Cstr_22:
+   0A2A: 00         .BYTE 0
+Cstr_23:
+   0A2B: 00         .BYTE 0
+Cstr_24:
+   0A2C: 30         .BYTE 48
+   0A2D: 31         .BYTE 49
+   0A2E: 32         .BYTE 50
+   0A2F: 33         .BYTE 51
+   0A30: 34         .BYTE 52
+   0A31: 35         .BYTE 53
+   0A32: 36         .BYTE 54
+   0A33: 37         .BYTE 55
+   0A34: 38         .BYTE 56
+   0A35: 39         .BYTE 57
+   0A36: 61         .BYTE 97
+   0A37: 62         .BYTE 98
+   0A38: 63         .BYTE 99
+   0A39: 64         .BYTE 100
+   0A3A: 65         .BYTE 101
+   0A3B: 66         .BYTE 102
+   0A3C: 00         .BYTE 0
+Cstr_25:
+   0A3D: 30         .BYTE 48
+   0A3E: 78         .BYTE 120
+   0A3F: 00         .BYTE 0
+Cstr_28:
+   0A40: 55         .BYTE 85
+   0A41: 70         .BYTE 112
+   0A42: 74         .BYTE 116
+   0A43: 69         .BYTE 105
+   0A44: 6D         .BYTE 109
+   0A45: 65         .BYTE 101
+   0A46: 20         .BYTE 32
+   0A47: 69         .BYTE 105
+   0A48: 73         .BYTE 115
+   0A49: 20         .BYTE 32
+   0A4A: 25         .BYTE 37
+   0A4B: 34         .BYTE 52
+   0A4C: 2E         .BYTE 46
+   0A4D: 34         .BYTE 52
+   0A4E: 58         .BYTE 88
+   0A4F: 25         .BYTE 37
+   0A50: 34         .BYTE 52
+   0A51: 2E         .BYTE 46
+   0A52: 34         .BYTE 52
+   0A53: 58         .BYTE 88
+   0A54: 25         .BYTE 37
+   0A55: 34         .BYTE 52
+   0A56: 2E         .BYTE 46
+   0A57: 34         .BYTE 52
+   0A58: 58         .BYTE 88
+   0A59: 20         .BYTE 32
+   0A5A: 73         .BYTE 115
+   0A5B: 65         .BYTE 101
+   0A5C: 63         .BYTE 99
+   0A5D: 6F         .BYTE 111
+   0A5E: 6E         .BYTE 110
+   0A5F: 64         .BYTE 100
+   0A60: 73         .BYTE 115
+   0A61: 0D         .BYTE 13
+   0A62: 0A         .BYTE 10
+   0A63: 00         .BYTE 0
+Cstr_29:
+   0A64: 25         .BYTE 37
+   0A65: 34         .BYTE 52
+   0A66: 2E         .BYTE 46
+   0A67: 34         .BYTE 52
+   0A68: 58         .BYTE 88
+   0A69: 3A         .BYTE 58
+   0A6A: 00         .BYTE 0
+Cstr_30:
+   0A6B: 20         .BYTE 32
+   0A6C: 25         .BYTE 37
+   0A6D: 32         .BYTE 50
+   0A6E: 2E         .BYTE 46
+   0A6F: 32         .BYTE 50
+   0A70: 58         .BYTE 88
+   0A71: 00         .BYTE 0
+Cstr_31:
+   0A72: 20         .BYTE 32
+   0A73: 2D         .BYTE 45
+   0A74: 20         .BYTE 32
+   0A75: 00         .BYTE 0
+Cstr_32:
+   0A76: 0D         .BYTE 13
+   0A77: 0A         .BYTE 10
+   0A78: 00         .BYTE 0
+Cstr_35:
+   0A79: 2D         .BYTE 45
+   0A7A: 3E         .BYTE 62
+   0A7B: 20         .BYTE 32
+   0A7C: 00         .BYTE 0
+Cstr_36:
+   0A7D: 08         .BYTE 8
+   0A7E: 08         .BYTE 8
+   0A7F: 08         .BYTE 8
+   0A80: 08         .BYTE 8
+   0A81: 00         .BYTE 0
+Cstr_37:
+   0A82: 44         .BYTE 68
+   0A83: 69         .BYTE 105
+   0A84: 73         .BYTE 115
+   0A85: 70         .BYTE 112
+   0A86: 6C         .BYTE 108
+   0A87: 61         .BYTE 97
+   0A88: 79         .BYTE 121
+   0A89: 20         .BYTE 32
+   0A8A: 00         .BYTE 0
+Cstr_38:
+   0A8B: 0D         .BYTE 13
+   0A8C: 0A         .BYTE 10
+   0A8D: 00         .BYTE 0
+Cstr_39:
+   0A8E: 4C         .BYTE 76
+   0A8F: 45         .BYTE 69
+   0A90: 44         .BYTE 68
+   0A91: 73         .BYTE 115
+   0A92: 20         .BYTE 32
+   0A93: 00         .BYTE 0
+Cstr_41:
+   0A94: 0D         .BYTE 13
+   0A95: 0A         .BYTE 10
+   0A96: 00         .BYTE 0
+Cstr_42:
+   0A97: 4D         .BYTE 77
+   0A98: 65         .BYTE 101
+   0A99: 6D         .BYTE 109
+   0A9A: 6F         .BYTE 111
+   0A9B: 72         .BYTE 114
+   0A9C: 79         .BYTE 121
+   0A9D: 20         .BYTE 32
+   0A9E: 00         .BYTE 0
+Cstr_43:
+   0A9F: 20         .BYTE 32
+   0AA0: 56         .BYTE 86
+   0AA1: 61         .BYTE 97
+   0AA2: 6C         .BYTE 108
+   0AA3: 75         .BYTE 117
+   0AA4: 65         .BYTE 101
+   0AA5: 20         .BYTE 32
+   0AA6: 00         .BYTE 0
+Cstr_44:
+   0AA7: 0D         .BYTE 13
+   0AA8: 0A         .BYTE 10
+   0AA9: 00         .BYTE 0
+Cstr_45:
+   0AAA: 44         .BYTE 68
+   0AAB: 49         .BYTE 73
+   0AAC: 50         .BYTE 80
+   0AAD: 20         .BYTE 32
+   0AAE: 73         .BYTE 115
+   0AAF: 77         .BYTE 119
+   0AB0: 69         .BYTE 105
+   0AB1: 74         .BYTE 116
+   0AB2: 63         .BYTE 99
+   0AB3: 68         .BYTE 104
+   0AB4: 20         .BYTE 32
+   0AB5: 69         .BYTE 105
+   0AB6: 73         .BYTE 115
+   0AB7: 20         .BYTE 32
+   0AB8: 30         .BYTE 48
+   0AB9: 78         .BYTE 120
+   0ABA: 25         .BYTE 37
+   0ABB: 58         .BYTE 88
+   0ABC: 0D         .BYTE 13
+   0ABD: 0A         .BYTE 10
+   0ABE: 00         .BYTE 0
+Cstr_47:
+   0ABF: 54         .BYTE 84
+   0AC0: 65         .BYTE 101
+   0AC1: 6D         .BYTE 109
+   0AC2: 70         .BYTE 112
+   0AC3: 65         .BYTE 101
+   0AC4: 72         .BYTE 114
+   0AC5: 61         .BYTE 97
+   0AC6: 74         .BYTE 116
+   0AC7: 75         .BYTE 117
+   0AC8: 72         .BYTE 114
+   0AC9: 65         .BYTE 101
+   0ACA: 20         .BYTE 32
+   0ACB: 69         .BYTE 105
+   0ACC: 73         .BYTE 115
+   0ACD: 20         .BYTE 32
+   0ACE: 25         .BYTE 37
+   0ACF: 64         .BYTE 100
+   0AD0: 20         .BYTE 32
+   0AD1: 64         .BYTE 100
+   0AD2: 65         .BYTE 101
+   0AD3: 67         .BYTE 103
+   0AD4: 72         .BYTE 114
+   0AD5: 65         .BYTE 101
+   0AD6: 65         .BYTE 101
+   0AD7: 73         .BYTE 115
+   0AD8: 20         .BYTE 32
+   0AD9: 43         .BYTE 67
+   0ADA: 65         .BYTE 101
+   0ADB: 6C         .BYTE 108
+   0ADC: 73         .BYTE 115
+   0ADD: 69         .BYTE 105
+   0ADE: 75         .BYTE 117
+   0ADF: 73         .BYTE 115
+   0AE0: 0D         .BYTE 13
+   0AE1: 0A         .BYTE 10
+   0AE2: 00         .BYTE 0
+Cstr_49:
+   0AE3: 48         .BYTE 72
+   0AE4: 61         .BYTE 97
+   0AE5: 6C         .BYTE 108
+   0AE6: 74         .BYTE 116
+   0AE7: 65         .BYTE 101
+   0AE8: 64         .BYTE 100
+   0AE9: 2E         .BYTE 46
+   0AEA: 0D         .BYTE 13
+   0AEB: 0A         .BYTE 10
+   0AEC: 00         .BYTE 0
+Cstr_52:
+   0AED: 0D         .BYTE 13
+   0AEE: 0A         .BYTE 10
+   0AEF: 43         .BYTE 67
+   0AF0: 20         .BYTE 32
+   0AF1: 2D         .BYTE 45
+   0AF2: 20         .BYTE 32
+   0AF3: 73         .BYTE 115
+   0AF4: 68         .BYTE 104
+   0AF5: 6F         .BYTE 111
+   0AF6: 77         .BYTE 119
+   0AF7: 20         .BYTE 32
+   0AF8: 74         .BYTE 116
+   0AF9: 69         .BYTE 105
+   0AFA: 6D         .BYTE 109
+   0AFB: 65         .BYTE 101
+   0AFC: 0D         .BYTE 13
+   0AFD: 0A         .BYTE 10
+   0AFE: 44         .BYTE 68
+   0AFF: 20         .BYTE 32
+   0B00: 2D         .BYTE 45
+   0B01: 20         .BYTE 32
+   0B02: 64         .BYTE 100
+   0B03: 69         .BYTE 105
+   0B04: 73         .BYTE 115
+   0B05: 70         .BYTE 112
+   0B06: 6C         .BYTE 108
+   0B07: 61         .BYTE 97
+   0B08: 79         .BYTE 121
+   0B09: 20         .BYTE 32
+   0B0A: 6D         .BYTE 109
+   0B0B: 65         .BYTE 101
+   0B0C: 6D         .BYTE 109
+   0B0D: 6F         .BYTE 111
+   0B0E: 72         .BYTE 114
+   0B0F: 79         .BYTE 121
+   0B10: 0D         .BYTE 13
+   0B11: 0A         .BYTE 10
+   0B12: 45         .BYTE 69
+   0B13: 20         .BYTE 32
+   0B14: 2D         .BYTE 45
+   0B15: 20         .BYTE 32
+   0B16: 73         .BYTE 115
+   0B17: 65         .BYTE 101
+   0B18: 74         .BYTE 116
+   0B19: 20         .BYTE 32
+   0B1A: 4C         .BYTE 76
+   0B1B: 45         .BYTE 69
+   0B1C: 44         .BYTE 68
+   0B1D: 73         .BYTE 115
+   0B1E: 0D         .BYTE 13
+   0B1F: 0A         .BYTE 10
+   0B20: 4D         .BYTE 77
+   0B21: 20         .BYTE 32
+   0B22: 2D         .BYTE 45
+   0B23: 20         .BYTE 32
+   0B24: 6D         .BYTE 109
+   0B25: 6F         .BYTE 111
+   0B26: 64         .BYTE 100
+   0B27: 69         .BYTE 105
+   0B28: 66         .BYTE 102
+   0B29: 79         .BYTE 121
+   0B2A: 20         .BYTE 32
+   0B2B: 6D         .BYTE 109
+   0B2C: 65         .BYTE 101
+   0B2D: 6D         .BYTE 109
+   0B2E: 6F         .BYTE 111
+   0B2F: 72         .BYTE 114
+   0B30: 79         .BYTE 121
+   0B31: 0D         .BYTE 13
+   0B32: 0A         .BYTE 10
+   0B33: 53         .BYTE 83
+   0B34: 20         .BYTE 32
+   0B35: 2D         .BYTE 45
+   0B36: 20         .BYTE 32
+   0B37: 72         .BYTE 114
+   0B38: 65         .BYTE 101
+   0B39: 61         .BYTE 97
+   0B3A: 64         .BYTE 100
+   0B3B: 20         .BYTE 32
+   0B3C: 44         .BYTE 68
+   0B3D: 49         .BYTE 73
+   0B3E: 50         .BYTE 80
+   0B3F: 20         .BYTE 32
+   0B40: 73         .BYTE 115
+   0B41: 77         .BYTE 119
+   0B42: 69         .BYTE 105
+   0B43: 74         .BYTE 116
+   0B44: 63         .BYTE 99
+   0B45: 68         .BYTE 104
+   0B46: 0D         .BYTE 13
+   0B47: 0A         .BYTE 10
+   0B48: 54         .BYTE 84
+   0B49: 20         .BYTE 32
+   0B4A: 2D         .BYTE 45
+   0B4B: 20         .BYTE 32
+   0B4C: 72         .BYTE 114
+   0B4D: 65         .BYTE 101
+   0B4E: 61         .BYTE 97
+   0B4F: 64         .BYTE 100
+   0B50: 20         .BYTE 32
+   0B51: 74         .BYTE 116
+   0B52: 65         .BYTE 101
+   0B53: 6D         .BYTE 109
+   0B54: 70         .BYTE 112
+   0B55: 65         .BYTE 101
+   0B56: 72         .BYTE 114
+   0B57: 61         .BYTE 97
+   0B58: 74         .BYTE 116
+   0B59: 75         .BYTE 117
+   0B5A: 72         .BYTE 114
+   0B5B: 65         .BYTE 101
+   0B5C: 0D         .BYTE 13
+   0B5D: 0A         .BYTE 10
+   0B5E: 51         .BYTE 81
+   0B5F: 20         .BYTE 32
+   0B60: 2D         .BYTE 45
+   0B61: 20         .BYTE 32
+   0B62: 71         .BYTE 113
+   0B63: 75         .BYTE 117
+   0B64: 69         .BYTE 105
+   0B65: 74         .BYTE 116
+   0B66: 0D         .BYTE 13
+   0B67: 0A         .BYTE 10
+   0B68: 58         .BYTE 88
+   0B69: 20         .BYTE 32
+   0B6A: 2D         .BYTE 45
+   0B6B: 20         .BYTE 32
+   0B6C: 65         .BYTE 101
+   0B6D: 78         .BYTE 120
+   0B6E: 69         .BYTE 105
+   0B6F: 74         .BYTE 116
+   0B70: 0D         .BYTE 13
+   0B71: 0A         .BYTE 10
+   0B72: 0D         .BYTE 13
+   0B73: 0A         .BYTE 10
+   0B74: 00         .BYTE 0
+Cend_text:

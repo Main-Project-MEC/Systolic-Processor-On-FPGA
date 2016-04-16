@@ -2,8 +2,10 @@
 Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
--n 3 -fastpaths -xml MAC4.twx MAC4.ncd -o MAC4.twr MAC4.pcf
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -filter
+E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/MAC4/iseconfig/filter.filter
+-intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml MAC4.twx MAC4.ncd -o MAC4.twr
+MAC4.pcf
 
 Design file:              MAC4.ncd
 Physical constraint file: MAC4.pcf
@@ -98,7 +100,7 @@ B<3>           |Z<7>           |   11.746|
 ---------------+---------------+---------+
 
 
-Analysis completed Thu Feb 11 00:18:07 2016 
+Analysis completed Fri Apr 15 14:31:36 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

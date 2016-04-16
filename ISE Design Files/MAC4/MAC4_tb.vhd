@@ -14,7 +14,7 @@ architecture tb OF MAC4_tb IS
 	signal A : std_logic_vector(3 downto 0);-- := (others => '0');
    signal B : std_logic_vector(3 downto 0);-- := (others => '0');
 	signal Z : std_logic_vector(7 downto 0);
-	signal Ai,Bi: integer;
+--	signal Ai,Bi: integer;
 	
 	begin
    mapping: MAC4 port map(A, B, Z);

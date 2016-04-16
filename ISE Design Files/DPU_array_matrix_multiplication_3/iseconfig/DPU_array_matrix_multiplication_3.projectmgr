@@ -18,6 +18,7 @@
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/FA - FA10 - FA10_arch/FA7 - FA - FA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/FA - FA10 - FA10_arch/FA8 - FA - FA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/FA - FA10 - FA10_arch/FA9 - FA - FA_arch</ClosedNode>
+         <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/FA41 - FA - FA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/FA42 - FA - FA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/FAM20 - FAM - FAM_arch</ClosedNode>
@@ -32,6 +33,7 @@
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/HAM13 - HAM - HA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/HAM23 - HAM - HA_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/MAC - MAC4 - MAC4_arch/HAM33 - HAM - HA_arch</ClosedNode>
+         <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/R0 - PIPO4 - PIPO4_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/R1 - PIPO4 - PIPO4_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU0 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch/R2 - PIPO10 - PIPO10_arch</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU1 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch</ClosedNode>
@@ -44,13 +46,13 @@
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd/DPU8 - DPU_matrix_multiplication - DPU_matrix_multiplication_arch</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>xc3s400-4tq144</SelectedItem>
+         <SelectedItem>DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000002bf000000020000000000000000000000000200000064ffffffff000000810000000300000002000002bf0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>xc3s400-4tq144</CurrentItem>
+      <CurrentItem>DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -108,22 +110,23 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff0000000000000002000001a50000000001000000050100000002</SourceProcessView>
+   <SourceProcessView>000000ff0000000000000002000000de000000c701000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3.vhd</ClosedNode>
          <ClosedNode>/DPU_array_matrix_multiplication_3_tb - behavior E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3_tb.vhd</ClosedNode>
+         <ClosedNode>/DPU_array_matrix_multiplication_3_tb - tb E:|Works|GitHub|Systolic-Processor-On-FPGA|ISE Design Files|DPU_array_matrix_multiplication_3|DPU_array_matrix_multiplication_3_tb.vhd/uut - DPU_array_matrix_multiplication_3 - DPU_array_matrix_multiplication_3_arch</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>R0 - PIPO4 - PIPO4_arch (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd)</SelectedItem>
+         <SelectedItem>DPU_array_matrix_multiplication_3_tb - tb (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3_tb.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000002e0000000020000000000000000000000000200000064ffffffff000000810000000300000002000002e00000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>R0 - PIPO4 - PIPO4_arch (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/PIPO4/PIPO4.vhd)</CurrentItem>
+      <CurrentItem>DPU_array_matrix_multiplication_3_tb - tb (E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/DPU_array_matrix_multiplication_3/DPU_array_matrix_multiplication_3_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -135,7 +138,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000156000000010000000100000000000000000000000064ffffffff000000810000000000000001000001560000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000145000000010000000100000000000000000000000064ffffffff000000810000000000000001000001450000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
