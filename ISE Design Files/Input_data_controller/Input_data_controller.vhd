@@ -10,13 +10,15 @@ architecture Input_data_controller_arch of Input_data_controller is
 signal count_in,count_out: STD_LOGIC_VECTOR(3 downto 0);
 
 begin
-process(in_ready)
-if count_in<19 then
-	if(in_ready='1')
-		PIPO_21x4 <= data_in;
-		count_in <= count_in + 1;
+	process(in_ready)
+	if count_in<19 then
+		if(in_ready='1')
+			PIPO_21x4_data_in <= data_in;
+			PIPO_21x4_clock <= '0';
+			PIPO_21x4_clock <= '1';
+			count_in <= count_in + 1;
+		end if;
 	end if;
-end if;
 end process;
 
 
