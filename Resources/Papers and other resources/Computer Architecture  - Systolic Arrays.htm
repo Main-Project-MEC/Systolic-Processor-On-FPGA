@@ -1,0 +1,113 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Computer Architecture: Systolic Arrays</title>
+</head>
+
+<body bgcolor="#ffffff">
+<table bgcolor="#60ffff" width="100%">
+<tbody><tr><td><h1>Computer Architecture<br>
+<i>The Anatomy of Modern Processors</i></h1><hr></td></tr>
+</tbody></table>
+
+<h2>Systolic Arrays</h2>
+
+Systolic arrays are arrays of processors which are connected
+to a small number of nearest neighbours in a mesh-like topology.
+Processors perform a sequence of operations on data that 
+flows between them.
+Generally the operations will be the same in each processor,
+with each processor performing an operation (or small number
+of operations) on a data item and them passing it on to its
+neighbour.
+Like SIMD machines, systolic arrays compute in "lock-step"
+with each processor undertaking alternate
+<center>
+compute | communicate
+</center>
+phases.
+<p>
+One well-known systolic array is <i>CMU</i>'s <font color="#fa0000"><b>
+iWarp</b></font> processor, which has been manufactured by Intel.
+An iWarp system has a linear array processors connected by 
+data buses going in both directions.
+
+</p><center>
+<img src="Computer%20Architecture%20%20-%20Systolic%20Arrays_files/sys.gif">
+</center>
+<p>
+
+</p><h3>An Example - Poynomial Evaluation</h3>
+
+Horner's rule for evaluating a polynomial is:
+<center>
+<table>
+<tbody><tr><td>
+<b><i>y = ((((a<sub>n</sub>x + a<sub>n-1</sub>)*x + a<sub>n-2</sub>)*x +
+a<sub>n-3</sub>)*x .... a<sub>1</sub>)*x + a<sub>0</sub></i></b>
+</td></tr>
+</tbody></table>
+</center>
+
+A linear systolic array in which the processors
+are arranged in pairs:
+<ul><li>one multiplies its input by <b><i>x</i></b>
+and passes the result to the right,
+</li><li>the next adds <b><i>a<sub>j</sub></i></b> and passes the
+result to the right:
+</li></ul>
+<center>
+<img src="Computer%20Architecture%20%20-%20Systolic%20Arrays_files/poly.htm">
+</center>
+This array can produce a polynomial on every cycle - after
+an initial latency of <b><i>2n</i></b> cycles.
+This is an example of a deeply pipelined computation: the
+pipeline has <b><i>2n</i></b> stages.
+
+
+<h3>Another Example - FFTs</h3>
+
+<h3>Variations</h3>
+Systolic arrays can be built with variations in:
+<ol>
+<li>Connection topology
+<ul><li>2D meshes
+</li><li><font color="#fa0000"><b>hypercubes</b></font>
+</li></ul>
+<p>
+</p></li><li>Processor capability: ranging through:
+<ul>
+<li>trivial - just an ALU
+</li><li>ALU with several registers
+</li><li>Simple CPU - registers, run own program
+</li><li>Powerful CPU - local memory also
+</li></ul>
+<p>
+</p></li><li>Reconfigurable<p>
+<font color="#fa0000"><b>Field Programmable Gate Arrays</b></font>
+(FPGAs) offer the possibility that re-programmable, re-configurable
+arrays can be constructed to efficiently compute
+certain problems.
+</p><p>
+</p></li></ol>
+
+In general, FPGA technology is excellent for building small
+systolic array-style processors.
+Special purpose ALUs can be constructed and linked in a 
+topology to which the target application maps well.
+
+
+<p>
+<table bgcolor="#00f0ff" cellpadding="5" width="100%">
+<tbody><tr><td>
+Continue on to <a href="https://www.cs.auckland.ac.nz/%7Ejmor159/363/html/vector.html">Vector Processors</a><br>
+Back to the <a href="https://www.cs.auckland.ac.nz/%7Ejmor159/363/html/CA_ToC.html">Table of Contents</a>
+</td></tr></tbody></table>
+<small>
+© <a href="mailto:morris@ee.uwa.edu.au">John Morris</a>, 1998
+</small>
+
+
+
+
+
+</p></body></html>

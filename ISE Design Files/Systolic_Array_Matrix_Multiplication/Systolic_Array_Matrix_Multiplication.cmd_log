@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/Systolic_Array_Matrix_Multiplication/Systolic_Array_Matrix_Multiplication.xst" -ofn "E:/Works/GitHub/Systolic-Processor-On-FPGA/ISE Design Files/Systolic_Array_Matrix_Multiplication/Systolic_Array_Matrix_Multiplication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s400-tq144-4 "Systolic_Array_Matrix_Multiplication.ngc" Systolic_Array_Matrix_Multiplication.ngd  
